@@ -11,6 +11,7 @@
     <saved-with-version>15802</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
@@ -45,7 +46,7 @@
         <prop name="Use high-DPI display">Yes</prop>
     </configuration-settings>
     <object-folder expanded="1">
-        <object-type name="Platform" sid="5628725682901961">
+        <object-type name="Platform1" sid="5628725682901961">
             <plugin id="Sprite" />
             <behaviors>
                 <behavior-type name="Jumpthru" sid="9061265766717797">
@@ -74,7 +75,10 @@
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4874520492384921" speed="5">
-                    <frame duration="1" hotspotX="0.4375" hotspotY="0.488">
+                    <frame duration="1" hotspotX="0.458333" hotspotY="0.124">
+                        <image-point name="EnemySpawn1" x="0.4375" y="0.348" />
+                        <image-point name="EnemySpawn3" x="0.5" y="0.568" />
+                        <image-point name="EnemySpawn4" x="0.458333" y="0.864" />
                         <collision-poly>
                             <point x="1" y="0" />
                             <point x="1" y="1" />
@@ -87,6 +91,9 @@
         </object-type>
         <object-type name="Player" sid="9755699264584235">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="PlayerHealth" sid="9491723657997477" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="ScrollTo" sid="3548422391116199">
                     <behavior id="scrollto" />
@@ -132,6 +139,11 @@
         </object-type>
         <object-type name="Enemy1" sid="9319291376072959">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="8298461383478879">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1820198767603247" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
@@ -159,6 +171,57 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Platform2" sid="3280304886937059">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="7123828214661853">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5473711539414438" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="-1.60417">
+                        <collision-poly>
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Platform3" sid="9541351526116573">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="2082967213089252">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="192060088866372" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="-1.60417">
+                        <collision-poly>
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Button_Play" sid="203172820628889">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4850588206983397" speed="5">
+                    <frame duration="1" hotspotX="0.531746" hotspotY="0.506173" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="7825083335689688">
+            <plugin id="Mouse" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Enemies" plugin-id="Sprite" sid="53169161098689">
@@ -166,16 +229,30 @@
                 <member>Enemy1</member>
                 <member>EnemyBoss</member>
             </members>
+            <instance-variables>
+                <instance-variable name="EnemyHealth" sid="1889623308342491" type="number" />
+            </instance-variables>
         </family>
     </families>
     <layout-folder expanded="1">
-        <layout>Stage_Denial.xml</layout>
+        <layout>0_TitleScreen.xml</layout>
+        <layout>1_Stage_Denial.xml</layout>
+        <layout>2_Stage_Anger.xml</layout>
+        <layout>3_Stage_Bargaining.xml</layout>
+        <layout>4_Stage_Depression.xml</layout>
+        <layout>5_Stage_Acceptance.xml</layout>
+        <layout>6_GameOver.xml</layout>
     </layout-folder>
     <event-folder expanded="1">
-        <event-sheet>Main_Controls.xml</event-sheet>
+        <event-sheet>00_Main_Controls.xml</event-sheet>
+        <event-sheet>1_Events_Denial.xml</event-sheet>
+        <event-sheet>2_Events_Anger.xml</event-sheet>
+        <event-sheet>6_Events_GameOver.xml</event-sheet>
+        <event-sheet>0_Events_TitleScreen.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />
+        <global-instance type="Mouse" uid="92" />
     </global-instances>
     <sounds-folder expanded="1" />
     <music-folder expanded="1" />

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>1_Events_Denial</name>
+    <events>
+        <include>00_Main_Controls</include>
+        <event-block sid="4151065456356979">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="3270250570534931" type="System">
+                    <param id="0" name="Interval (seconds)">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="6965787555991967" type="Wall">
+                    <param id="0" name="Object">Enemy1</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9280312920102832">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="9282693582984318" type="System">
+                    <param id="0" name="Interval (seconds)">6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="8556211234753334" type="Wall">
+                    <param id="0" name="Object">Enemy1</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7424134081886644">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="5609830422657093" type="System">
+                    <param id="0" name="Interval (seconds)">9</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="4541726939989162" type="Wall">
+                    <param id="0" name="Object">Enemy1</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">2</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
