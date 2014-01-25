@@ -4,56 +4,101 @@
     <name>1_Events_Denial</name>
     <events>
         <include>00_Main_Controls</include>
-        <event-block sid="4151065456356979">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="3270250570534931" type="System">
-                    <param id="0" name="Interval (seconds)">3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Spawn another object" sid="6965787555991967" type="EnemyBoss">
-                    <param id="0" name="Object">Enemy1_Fireball</param>
-                    <param id="1" name="Layer">0</param>
-                    <param id="2" name="Image point">2</param>
-                </action>
-                <action id="-8" name="Set angle" sid="7412290913208735" type="Enemy1_Fireball">
-                    <param id="0" name="Angle">180</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="9280312920102832">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="9282693582984318" type="System">
-                    <param id="0" name="Interval (seconds)">6</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Spawn another object" sid="8556211234753334" type="EnemyBoss">
-                    <param id="0" name="Object">Enemy1_Fireball</param>
-                    <param id="1" name="Layer">0</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
-                <action id="-8" name="Set angle" sid="8472189595350025" type="Enemy1_Fireball">
-                    <param id="0" name="Angle">180</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="7424134081886644">
-            <conditions>
-                <condition id="-6" name="Every X seconds" sid="5609830422657093" type="System">
-                    <param id="0" name="Interval (seconds)">9</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Spawn another object" sid="4541726939989162" type="EnemyBoss">
-                    <param id="0" name="Object">Enemy1_Fireball</param>
-                    <param id="1" name="Layer">0</param>
-                    <param id="2" name="Image point">1</param>
-                </action>
-                <action id="-8" name="Set angle" sid="1942313233019738" type="Enemy1_Fireball">
-                    <param id="0" name="Angle">180</param>
-                </action>
-            </actions>
-        </event-block>
+        <event-group description="" sid="9284742810276859" title="Stage 1 Enemy Events">
+            <sub-events>
+                <event-block sid="4151065456356979">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="3270250570534931" type="System">
+                            <param id="0" name="Interval (seconds)">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="6965787555991967" type="EnemyBoss">
+                            <param id="0" name="Object">Enemy1_Fireball</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="7412290913208735" type="Enemy1_Fireball">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9280312920102832">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="9282693582984318" type="System">
+                            <param id="0" name="Interval (seconds)">6</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="8556211234753334" type="EnemyBoss">
+                            <param id="0" name="Object">Enemy1_Fireball</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="8472189595350025" type="Enemy1_Fireball">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7424134081886644">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="5609830422657093" type="System">
+                            <param id="0" name="Interval (seconds)">9</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="4541726939989162" type="EnemyBoss">
+                            <param id="0" name="Object">Enemy1_Fireball</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="1942313233019738" type="Enemy1_Fireball">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1224002001021364">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7913464338679961" type="EnemyBoss">
+                            <param id="0" name="Instance variable">EnemyHealth</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="2404572961259661" type="EnemyBoss" />
+                        <action id="-16" name="Wait" sid="5479135101454653" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="6915503463034885" type="Stage_FadeOutScreen">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="6892940959664535" type="Stage_FadeOutScreen" />
+                        <action id="-16" name="Wait" sid="6825184100586616" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="9922634210720033" type="System">
+                            <param id="0" name="Layout">2_Stage_Anger</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="4193449614503442" title="Stage 1 Player Events">
+            <sub-events>
+                <event-block sid="8578951935492795">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="9584716006727178" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="6189496142410155" type="Player">
+                            <param id="0" name="Instance variable">Shooting_Enabled</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

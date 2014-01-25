@@ -14,6 +14,7 @@
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
@@ -22,6 +23,7 @@
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Persist" version="1">Persist</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
     </used-behaviors>
     <used-effects />
@@ -92,6 +94,9 @@
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="PlayerHealth" sid="9491723657997477" type="number" />
+                <instance-variable name="Shooting_Enabled" sid="8601753929880126" type="boolean" />
+                <instance-variable name="Double_Jump" sid="6937945959577847" type="boolean" />
+                <instance-variable name="PlayerName" sid="9740937820154643" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="ScrollTo" sid="3548422391116199">
@@ -151,6 +156,11 @@
         </object-type>
         <object-type name="EnemyBoss" sid="4606992872890166">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="EnemyName" sid="1349904632215799" type="string" />
+                <instance-variable name="EnemyInsult1" sid="9941941988065571" type="string" />
+                <instance-variable name="EnemyInsult2" sid="4877968044962386" type="string" />
+            </instance-variables>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7667805864111118" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
@@ -230,16 +240,16 @@
         <object-type name="Mouse" sid="7825083335689688">
             <plugin id="Mouse" />
         </object-type>
-        <object-type name="Enemy2" sid="3767753379875516">
+        <object-type name="Enemy2_Spikes" sid="3767753379875516">
             <plugin id="Sprite" />
             <behaviors>
-                <behavior-type name="Bullet" sid="1191295674684787">
-                    <behavior id="Bullet" />
+                <behavior-type name="Persist" sid="3472692444258518">
+                    <behavior id="Persist" />
                 </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2457538279940532" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.504" hotspotY="0.507614" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -285,12 +295,45 @@
             </behaviors>
             <texture />
         </object-type>
+        <object-type name="Enemy3" sid="1379838091446534">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="1827521869820196">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6528847777904495" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PlayerHealthBar" sid="1039211984665461">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6373989823270174" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.470588" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PlayerHealthIcon" sid="2629003083363091">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2601433046502807" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.473684" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PlayerName_TextBox" sid="3660684421068529">
+            <plugin id="TextBox" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Enemies" plugin-id="Sprite" sid="53169161098689">
             <members>
                 <member>Enemy1_Fireball</member>
-                <member>Enemy2</member>
+                <member>Enemy2_Spikes</member>
+                <member>Enemy3</member>
                 <member>EnemyBoss</member>
             </members>
             <instance-variables>
@@ -300,16 +343,12 @@
         </family>
     </families>
     <layout-folder expanded="1">
-        <layout>0_TitleScreen.xml</layout>
-        <layout>1_Intro_Denial.xml</layout>
+        <layout>01_TitleScreen.xml</layout>
+        <layout>02_Questions_1.xml</layout>
         <layout>1_Stage_Denial.xml</layout>
-        <layout>2_Intro_Anger.xml</layout>
         <layout>2_Stage_Anger.xml</layout>
-        <layout>3_Intro_Bargaining.xml</layout>
         <layout>3_Stage_Bargaining.xml</layout>
-        <layout>4_Intro_Depression.xml</layout>
         <layout>4_Stage_Depression.xml</layout>
-        <layout>5_Intro_Acceptance.xml</layout>
         <layout>5_Stage_Acceptance.xml</layout>
         <layout>6_LoseState.xml</layout>
         <layout>7_WinState.xml</layout>
@@ -318,8 +357,13 @@
         <event-sheet>00_Main_Controls.xml</event-sheet>
         <event-sheet>1_Events_Denial.xml</event-sheet>
         <event-sheet>2_Events_Anger.xml</event-sheet>
-        <event-sheet>6_Events_GameOver.xml</event-sheet>
-        <event-sheet>0_Events_TitleScreen.xml</event-sheet>
+        <event-sheet>6_Events_LoseState.xml</event-sheet>
+        <event-sheet>01_Events_TitleScreen.xml</event-sheet>
+        <event-sheet>3_Events_Bargaining.xml</event-sheet>
+        <event-sheet>4_Events_Depression.xml</event-sheet>
+        <event-sheet>5_Events_Acceptance.xml</event-sheet>
+        <event-sheet>7_Events_WinState.xml</event-sheet>
+        <event-sheet>02_Questions_1.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />

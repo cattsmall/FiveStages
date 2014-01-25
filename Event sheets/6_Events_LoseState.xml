@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>6_Events_GameOver</name>
+    <name>6_Events_LoseState</name>
     <events>
         <include>00_Main_Controls</include>
     </events>

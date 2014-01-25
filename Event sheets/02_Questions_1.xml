@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>02_Questions_1</name>
+    <events>
+        <event-group description="" sid="1318188168090836" title="Question 1 Events">
+            <sub-events>
+                <comment>Set Player&apos;s Name</comment>
+                <event-block sid="270581092655652">
+                    <conditions>
+                        <condition id="1" name="On text changed" sid="3796902044481376" type="PlayerName_TextBox" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="5207634010204101" type="Player">
+                            <param id="0" name="Instance variable">PlayerName</param>
+                            <param id="1" name="Value">PlayerName_TextBox.Text</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

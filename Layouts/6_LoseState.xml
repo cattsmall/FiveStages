@@ -2,7 +2,7 @@
 <c2layout>
     <name>6_LoseState</name>
     <sid>6599798132913175</sid>
-    <event-sheet>6_Events_GameOver</event-sheet>
+    <event-sheet>6_Events_LoseState</event-sheet>
     <size>
         <width>1024</width>
         <height>768</height>

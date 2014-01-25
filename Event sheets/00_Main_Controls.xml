@@ -3,19 +3,68 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>00_Main_Controls</name>
     <events>
-        <event-group description="" sid="8022575280531921" title="Mouse Events">
+        <event-group description="" sid="7789758117850252" title="Scene Change Events">
             <sub-events>
-                <event-block sid="1842119688927452">
+                <comment>On layout load, position Title Elements</comment>
+                <event-block sid="5683575184189746">
                     <conditions>
-                        <condition id="6" name="On object clicked" sid="9886746205303033" type="Mouse">
-                            <param id="0" name="Mouse button">0</param>
-                            <param id="1" name="Click type">0</param>
-                            <param id="2" name="Object clicked">Button_Play</param>
-                        </condition>
+                        <condition id="-2" name="On start of layout" sid="7223950910400069" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-2" name="Go to layout" sid="7842929913715339" type="System">
-                            <param id="0" name="Layout">1_Stage_Denial</param>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="9685307223502117" type="Player">
+                            <param id="0" name="Input">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="5987965714322285" type="Stage_FadeInScreen">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="5815418412191303" type="Stage_Number">
+                            <param id="0" name="X">512</param>
+                            <param id="1" name="Y">128</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="101860793349395" type="Stage_Title">
+                            <param id="0" name="X">24</param>
+                            <param id="1" name="Y">256</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="869334932360144" type="Stage_Quote">
+                            <param id="0" name="X">24</param>
+                            <param id="1" name="Y">384</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="1616864682156045" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="6954527381227511" type="Stage_FadeInScreen" />
+                        <action behavior="Fade" id="1" name="Start fade" sid="4174679300845641" type="Stage_Number" />
+                        <action behavior="Fade" id="1" name="Start fade" sid="8184836041988501" type="Stage_Title" />
+                        <action behavior="Fade" id="1" name="Start fade" sid="7355787144267027" type="Stage_Quote" />
+                    </actions>
+                    <sub-events>
+                        <comment>Fade out Title Elements after 5 seconds</comment>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5177515526034134">
+                    <conditions>
+                        <condition behavior="Fade" id="0" name="On fade out finished" sid="714223016715614" type="Stage_FadeInScreen" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="9669989699242259" type="Player">
+                            <param id="0" name="Input">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="6293295986594433" type="Stage_FadeInScreen">
+                            <param id="0" name="X">-800</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="2913706005631119" type="Stage_Number">
+                            <param id="0" name="X">-800</param>
+                            <param id="1" name="Y">128</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="6653023593261613" type="Stage_Title">
+                            <param id="0" name="X">-800</param>
+                            <param id="1" name="Y">256</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="8815446288570456" type="Stage_Quote">
+                            <param id="0" name="X">-800</param>
+                            <param id="1" name="Y">384</param>
                         </action>
                     </actions>
                 </event-block>
@@ -54,19 +103,41 @@
                             <param id="0" name="Key">38 (Up arrow)</param>
                         </condition>
                         <condition behavior="Platform" id="3" name="Is jumping" sid="702712360194817" type="Player" />
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="6119660326002481" type="Player">
+                            <param id="0" name="Instance variable">Double_Jump</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action behavior="Platform" id="9" name="Set vector Y" sid="9187986346014981" type="Player">
                             <param id="0" name="Vector Y">-800</param>
                         </action>
+                        <action id="-13" name="Set boolean" sid="521701931428435" type="Player">
+                            <param id="0" name="Instance variable">Double_Jump</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
                 </event-block>
+                <event-block sid="5292953724047924">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="8938883304137466" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="5112094361843906" type="Player">
+                            <param id="0" name="Instance variable">Double_Jump</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Shooting</comment>
                 <event-block sid="1695185182906098">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="7630911768428095" type="Keyboard">
                             <param id="0" name="Key">32 (Space)</param>
                         </condition>
                         <condition id="7" inverted="1" name="Is mirrored" sid="8872185027069346" type="Player" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="2696627816802831" type="Player">
+                            <param id="0" name="Instance variable">Shooting_Enabled</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Spawn another object" sid="2960979898233934" type="Player">
@@ -82,6 +153,9 @@
                             <param id="0" name="Key">32 (Space)</param>
                         </condition>
                         <condition id="7" name="Is mirrored" sid="9717770957068399" type="Player" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="7527415374178233" type="Player">
+                            <param id="0" name="Instance variable">Shooting_Enabled</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Spawn another object" sid="9969757009707248" type="Player">
@@ -98,20 +172,7 @@
         </event-group>
         <event-group description="" sid="1775825506025233" title="Player Events">
             <sub-events>
-                <event-block sid="5218984631280288">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="9890247310791902" type="PlayerBullet">
-                            <param id="0" name="Object">Enemies</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-12" name="Subtract from" sid="470275201671051" type="Enemies">
-                            <param id="0" name="Instance variable">EnemyHealth</param>
-                            <param id="1" name="Value">50</param>
-                        </action>
-                        <action id="-9" name="Destroy" sid="1521984271069072" type="PlayerBullet" />
-                    </actions>
-                </event-block>
+                <comment>Player Collision and Death</comment>
                 <event-block sid="1180465888677775">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="3862496328864514" type="Player">
@@ -124,15 +185,6 @@
                             <param id="1" name="Duration">0.5</param>
                             <param id="2" name="Mode">0</param>
                         </action>
-                    </actions>
-                </event-block>
-                <event-block sid="6300505984717526">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="1499907083084692" type="Player">
-                            <param id="0" name="Object">Enemies</param>
-                        </condition>
-                    </conditions>
-                    <actions>
                         <action id="-12" name="Subtract from" sid="3835526589329901" type="Player">
                             <param id="0" name="Instance variable">PlayerHealth</param>
                             <param id="1" name="Value">Enemies.EnemyStrength</param>
@@ -148,6 +200,9 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="267361517537445" type="Player">
+                            <param id="0" name="Input">1</param>
+                        </action>
                         <action id="-3" name="Set position" sid="9574240889645526" type="Stage_FadeOutScreen">
                             <param id="0" name="X">0</param>
                             <param id="1" name="Y">0</param>
@@ -159,6 +214,21 @@
                         <action id="-26" name="Restart layout" sid="6047625257593366" type="System" />
                     </actions>
                 </event-block>
+                <comment>Player&apos;s Bullets</comment>
+                <event-block sid="5218984631280288">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="9890247310791902" type="PlayerBullet">
+                            <param id="0" name="Object">Enemies</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="470275201671051" type="Enemies">
+                            <param id="0" name="Instance variable">EnemyHealth</param>
+                            <param id="1" name="Value">50</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="1521984271069072" type="PlayerBullet" />
+                    </actions>
+                </event-block>
                 <event-block sid="3459881118029408">
                     <conditions>
                         <condition id="-4" name="Is outside layout" sid="5555581584107086" type="PlayerBullet" />
@@ -167,11 +237,48 @@
                         <action id="-9" name="Destroy" sid="4880204139358062" type="PlayerBullet" />
                     </actions>
                 </event-block>
+                <comment>Player&apos;s Health</comment>
+                <event-block sid="4428999585587855">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="6995673317247261" type="Player">
+                            <param id="0" name="Instance variable">PlayerHealth</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="9650743114066112" type="PlayerHealthBar">
+                            <param id="0" name="Width">Player.PlayerHealth/5</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="7559107589873601" type="PlayerHealthBar">
+                            <param id="0" name="X">770</param>
+                            <param id="1" name="Y">60</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="5256154472568046" type="PlayerHealthIcon">
+                            <param id="0" name="X">750</param>
+                            <param id="1" name="Y">60</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8628269534577639">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="639264724411495" type="Player">
+                            <param id="0" name="Instance variable">PlayerHealth</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="8776988298022228" type="PlayerHealthBar">
+                            <param id="0" name="Width">0</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="8600911519704577" title="Enemy Events">
             <sub-events>
-                <comment>Enemy 1 Events</comment>
+                <comment>Fireballs</comment>
                 <event-block sid="6150680373804569">
                     <conditions>
                         <condition id="-18" name="On created" sid="9285144955953411" type="Enemy1_Fireball" />
@@ -212,6 +319,18 @@
                         <action id="-9" name="Destroy" sid="6745483741934872" type="Enemy1_Fireball" />
                     </actions>
                 </event-block>
+                <event-block sid="2275126224774289">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="7527651445751337" type="Enemy2_Spikes" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="9950817547327833" type="Enemy2_Spikes">
+                            <param id="0" name="Instance variable">EnemyStrength</param>
+                            <param id="1" name="Value">300</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Bosses</comment>
                 <event-block sid="4175985693398582">
                     <conditions>
                         <condition id="-18" name="On created" sid="9673796198611457" type="EnemyBoss" />
@@ -219,7 +338,11 @@
                     <actions>
                         <action id="-10" name="Set value" sid="9465136074153385" type="EnemyBoss">
                             <param id="0" name="Instance variable">EnemyHealth</param>
-                            <param id="1" name="Value">10000</param>
+                            <param id="1" name="Value">5000</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2723766544154229" type="EnemyBoss">
+                            <param id="0" name="Instance variable">EnemyStrength</param>
+                            <param id="1" name="Value">300</param>
                         </action>
                     </actions>
                 </event-block>
@@ -227,7 +350,7 @@
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="6708166839789867" type="EnemyBoss">
                             <param id="0" name="Instance variable">EnemyHealth</param>
-                            <param id="1" name="Comparison">0</param>
+                            <param id="1" name="Comparison">3</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
@@ -241,67 +364,6 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="1543806863206132" type="Enemies" />
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="7789758117850252" title="Scene Change Events">
-            <sub-events>
-                <comment>On layout load, position Title Elements</comment>
-                <event-block sid="5683575184189746">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" sid="7223950910400069" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Set position" sid="5987965714322285" type="Stage_FadeInScreen">
-                            <param id="0" name="X">0</param>
-                            <param id="1" name="Y">0</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="5815418412191303" type="Stage_Number">
-                            <param id="0" name="X">512</param>
-                            <param id="1" name="Y">128</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="101860793349395" type="Stage_Title">
-                            <param id="0" name="X">24</param>
-                            <param id="1" name="Y">256</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="869334932360144" type="Stage_Quote">
-                            <param id="0" name="X">24</param>
-                            <param id="1" name="Y">384</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="1616864682156045" type="System">
-                            <param id="0" name="Seconds">2</param>
-                        </action>
-                        <action behavior="Fade" id="1" name="Start fade" sid="6954527381227511" type="Stage_FadeInScreen" />
-                        <action behavior="Fade" id="1" name="Start fade" sid="4174679300845641" type="Stage_Number" />
-                        <action behavior="Fade" id="1" name="Start fade" sid="8184836041988501" type="Stage_Title" />
-                        <action behavior="Fade" id="1" name="Start fade" sid="7355787144267027" type="Stage_Quote" />
-                    </actions>
-                    <sub-events>
-                        <comment>Fade out Title Elements after 5 seconds</comment>
-                    </sub-events>
-                </event-block>
-                <event-block sid="5177515526034134">
-                    <conditions>
-                        <condition behavior="Fade" id="0" name="On fade out finished" sid="714223016715614" type="Stage_FadeInScreen" />
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Set position" sid="6293295986594433" type="Stage_FadeInScreen">
-                            <param id="0" name="X">-800</param>
-                            <param id="1" name="Y">0</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="2913706005631119" type="Stage_Number">
-                            <param id="0" name="X">-800</param>
-                            <param id="1" name="Y">128</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="6653023593261613" type="Stage_Title">
-                            <param id="0" name="X">-800</param>
-                            <param id="1" name="Y">256</param>
-                        </action>
-                        <action id="-3" name="Set position" sid="8815446288570456" type="Stage_Quote">
-                            <param id="0" name="X">-800</param>
-                            <param id="1" name="Y">384</param>
-                        </action>
                     </actions>
                 </event-block>
             </sub-events>

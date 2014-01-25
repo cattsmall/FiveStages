@@ -131,6 +131,9 @@
                     </properties>
                     <instance-variables>
                         <PlayerHealth>1000</PlayerHealth>
+                        <Shooting_Enabled>true</Shooting_Enabled>
+                        <Double_Jump>false</Double_Jump>
+                        <PlayerName></PlayerName>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="ScrollTo">
@@ -176,6 +179,9 @@
                     <instance-variables>
                         <EnemyHealth>0</EnemyHealth>
                         <EnemyStrength>0</EnemyStrength>
+                        <EnemyName></EnemyName>
+                        <EnemyInsult1></EnemyInsult1>
+                        <EnemyInsult2></EnemyInsult2>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -214,14 +220,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1148</x>
-                        <y>-70</y>
+                        <x>-63</x>
+                        <y>326</y>
                         <z>0</z>
                         <width>28</width>
                         <height>28</height>
                         <depth>0</depth>
-                        <hotspotX>2.571428537</hotspotX>
-                        <hotspotY>2.285714388</hotspotY>
+                        <hotspotX>0.571428597</hotspotX>
+                        <hotspotY>0.571428597</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -583,6 +589,96 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="Enemy2_Spikes" uid="122">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <EnemyHealth>0</EnemyHealth>
+                        <EnemyStrength>0</EnemyStrength>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Persist" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1300.456298828</x>
+                        <y>682.74822998</y>
+                        <z>0</z>
+                        <width>114.050926208</width>
+                        <height>89.872131348</height>
+                        <depth>0</depth>
+                        <hotspotX>0.504000008</hotspotX>
+                        <hotspotY>0.507614195</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+        <layer name="User Interface" sid="867234489104247">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>0</x>
+                <y>0</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="PlayerHealthBar" uid="123">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>730</x>
+                        <y>67</y>
+                        <z>0</z>
+                        <width>251.999984741</width>
+                        <height>17</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0.470588237</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="PlayerHealthIcon" uid="124">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>692.5</x>
+                        <y>65</y>
+                        <z>0</z>
+                        <width>26</width>
+                        <height>19</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.473684222</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
                 <instance type="Stage_FadeInScreen" uid="100">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
@@ -614,75 +710,30 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Stage_Title" uid="101">
+                <instance type="Stage_FadeOutScreen" uid="104">
                     <properties>
-                        <text>Denial</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Georgia,-96,400,0</font>
-                        <color>255,255,255</color>
-                        <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
                     </properties>
                     <behavior-instances>
                         <behavior-instance type="Fade">
                             <properties>
                                 <active-at-start>No</active-at-start>
-                                <fade-in-time>0</fade-in-time>
+                                <fade-in-time>1</fade-in-time>
                                 <wait-time>0</wait-time>
-                                <fade-out-time>1</fade-out-time>
-                                <destroy>After fade out</destroy>
+                                <fade-out-time>0</fade-out-time>
+                                <destroy>No</destroy>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-24</x>
-                        <y>-857</y>
+                        <x>1197</x>
+                        <y>-1004</y>
                         <z>0</z>
-                        <width>814</width>
-                        <height>133</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Stage_Quote" uid="102">
-                    <properties>
-                        <text>&quot;I feel fine. This can&apos;t be happening, not to me.&quot;</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Georgia,-48,400,1</font>
-                        <color>204,204,255</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Fade">
-                            <properties>
-                                <active-at-start>No</active-at-start>
-                                <fade-in-time>0</fade-in-time>
-                                <wait-time>0</wait-time>
-                                <fade-out-time>1</fade-out-time>
-                                <destroy>After fade out</destroy>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>32</x>
-                        <y>-581</y>
-                        <z>0</z>
-                        <width>720</width>
-                        <height>128</height>
+                        <width>1024</width>
+                        <height>768</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -728,30 +779,75 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Stage_FadeOutScreen" uid="104">
+                <instance type="Stage_Quote" uid="102">
                     <properties>
+                        <text>&quot;I feel fine. This can&apos;t be happening, not to me.&quot;</text>
                         <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-48,400,1</font>
+                        <color>204,204,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
                     </properties>
                     <behavior-instances>
                         <behavior-instance type="Fade">
                             <properties>
                                 <active-at-start>No</active-at-start>
-                                <fade-in-time>1</fade-in-time>
+                                <fade-in-time>0</fade-in-time>
                                 <wait-time>0</wait-time>
-                                <fade-out-time>0</fade-out-time>
-                                <destroy>No</destroy>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1197</x>
-                        <y>-1004</y>
+                        <x>32</x>
+                        <y>-581</y>
                         <z>0</z>
-                        <width>1024</width>
-                        <height>768</height>
+                        <width>720</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Stage_Title" uid="101">
+                    <properties>
+                        <text>Denial</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-96,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-24</x>
+                        <y>-857</y>
+                        <z>0</z>
+                        <width>814</width>
+                        <height>133</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>

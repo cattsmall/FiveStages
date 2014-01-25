@@ -2,14 +2,14 @@
 <c2layout>
     <name>3_Stage_Bargaining</name>
     <sid>8941445372312226</sid>
-    <event-sheet>1_Events_Denial</event-sheet>
+    <event-sheet>3_Events_Bargaining</event-sheet>
     <size>
         <width>12800</width>
         <height>768</height>
     </size>
     <margins>
         <horizontal>256</horizontal>
-        <vertical>256</vertical>
+        <vertical>1024</vertical>
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
@@ -131,6 +131,9 @@
                     </properties>
                     <instance-variables>
                         <PlayerHealth>1000</PlayerHealth>
+                        <Shooting_Enabled>true</Shooting_Enabled>
+                        <Double_Jump>false</Double_Jump>
+                        <PlayerName></PlayerName>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="ScrollTo">
@@ -176,6 +179,9 @@
                     <instance-variables>
                         <EnemyHealth>0</EnemyHealth>
                         <EnemyStrength>0</EnemyStrength>
+                        <EnemyName></EnemyName>
+                        <EnemyInsult1></EnemyInsult1>
+                        <EnemyInsult2></EnemyInsult2>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -214,14 +220,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1148</x>
-                        <y>-70</y>
+                        <x>-75</x>
+                        <y>248</y>
                         <z>0</z>
                         <width>28</width>
                         <height>28</height>
                         <depth>0</depth>
-                        <hotspotX>2.571428537</hotspotX>
-                        <hotspotY>2.285714388</hotspotY>
+                        <hotspotX>0.571428597</hotspotX>
+                        <hotspotY>0.571428597</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -252,8 +258,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-90</x>
-                        <y>227</y>
+                        <x>-149</x>
+                        <y>430</y>
                         <z>0</z>
                         <width>106.957939148</width>
                         <height>106.957939148</height>
@@ -572,13 +578,250 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>21</x>
-                        <y>95.440002441</y>
+                        <y>394</y>
                         <z>0</z>
                         <width>48</width>
                         <height>771</height>
                         <depth>0</depth>
                         <hotspotX>0.520833313</hotspotX>
                         <hotspotY>0.512000024</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+        <layer name="User Interface" sid="2095457055191191">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>0</x>
+                <y>0</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="PlayerHealthBar" uid="127">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>721</x>
+                        <y>81</y>
+                        <z>0</z>
+                        <width>251.999984741</width>
+                        <height>17</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0.470588237</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="PlayerHealthIcon" uid="128">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>684</x>
+                        <y>79</y>
+                        <z>0</z>
+                        <width>26</width>
+                        <height>19</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.473684222</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Stage_FadeInScreen" uid="95">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-170</x>
+                        <y>-948</y>
+                        <z>0</z>
+                        <width>1024</width>
+                        <height>768</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Stage_Title" uid="96">
+                    <properties>
+                        <text>Bargaining</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-96,400,0</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-43</x>
+                        <y>-804</y>
+                        <z>0</z>
+                        <width>814</width>
+                        <height>133</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Stage_Quote" uid="97">
+                    <properties>
+                        <text>&quot;I&apos;ll do anything to be with you. Can we still be friends?&quot;</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-48,400,1</font>
+                        <color>204,204,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>13</x>
+                        <y>-528</y>
+                        <z>0</z>
+                        <width>720</width>
+                        <height>128</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Stage_Number" uid="98">
+                    <properties>
+                        <text>STAGE THREE</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-16,400,0</font>
+                        <color>204,204,255</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>255</x>
+                        <y>-864</y>
+                        <z>0</z>
+                        <width>200</width>
+                        <height>30</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Stage_FadeOutScreen" uid="99">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>1</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>0</fade-out-time>
+                                <destroy>No</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1178</x>
+                        <y>-951</y>
+                        <z>0</z>
+                        <width>1024</width>
+                        <height>768</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
