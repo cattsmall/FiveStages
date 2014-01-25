@@ -175,6 +175,7 @@
                     </properties>
                     <instance-variables>
                         <EnemyHealth>0</EnemyHealth>
+                        <EnemyStrength>0</EnemyStrength>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -201,7 +202,7 @@
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>400</speed>
+                                <speed>1000</speed>
                                 <acceleration>0</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
@@ -225,7 +226,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Enemy1" uid="43">
+                <instance type="Enemy1_Fireball" uid="43">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -234,6 +235,7 @@
                     </properties>
                     <instance-variables>
                         <EnemyHealth>0</EnemyHealth>
+                        <EnemyStrength>0</EnemyStrength>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet">
@@ -256,8 +258,8 @@
                         <width>106.957939148</width>
                         <height>106.957939148</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.863013685</hotspotX>
+                        <hotspotY>0.868965507</hotspotY>
                         <angle>1.570796371</angle>
                         <opacity>1</opacity>
                     </world>
@@ -575,8 +577,8 @@
                         <width>48</width>
                         <height>771</height>
                         <depth>0</depth>
-                        <hotspotX>0.458333343</hotspotX>
-                        <hotspotY>0.123999998</hotspotY>
+                        <hotspotX>0.520833313</hotspotX>
+                        <hotspotY>0.512000024</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

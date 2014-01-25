@@ -12,7 +12,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <open-tabs>
         <layout>1_Stage_Denial</layout>
         <layout>0_TitleScreen</layout>
-        <layout>6_GameOver</layout>
+        <layout>6_LoseState</layout>
         <event-sheet active="1">00_Main_Controls</event-sheet>
         <event-sheet>1_Events_Denial</event-sheet>
         <event-sheet>6_Events_GameOver</event-sheet>

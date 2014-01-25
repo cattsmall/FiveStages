@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>6_GameOver</name>
-    <sid>6599798132913175</sid>
-    <event-sheet>6_Events_GameOver</event-sheet>
+    <name>2_Intro_Anger</name>
+    <sid>1581409183564172</sid>
+    <event-sheet>0_Events_TitleScreen</event-sheet>
     <size>
         <width>1024</width>
         <height>768</height>
@@ -13,7 +13,7 @@
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
-        <layer name="Background" sid="7368852021237567">
+        <layer name="Background" sid="4328876246234354">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>0</transparent>
@@ -27,7 +27,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Button_Play" uid="91">
+                <instance type="Button_Play" uid="96">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -37,8 +37,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>481</x>
-                        <y>429</y>
+                        <x>532</x>
+                        <y>455</y>
                         <z>0</z>
                         <width>252</width>
                         <height>81</height>
@@ -52,7 +52,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="Foreground" sid="8530262732480033">
+        <layer name="Foreground" sid="176208999024889">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>

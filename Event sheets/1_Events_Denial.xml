@@ -11,10 +11,13 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Spawn another object" sid="6965787555991967" type="Wall">
-                    <param id="0" name="Object">Enemy1</param>
+                <action id="0" name="Spawn another object" sid="6965787555991967" type="EnemyBoss">
+                    <param id="0" name="Object">Enemy1_Fireball</param>
                     <param id="1" name="Layer">0</param>
-                    <param id="2" name="Image point">3</param>
+                    <param id="2" name="Image point">2</param>
+                </action>
+                <action id="-8" name="Set angle" sid="7412290913208735" type="Enemy1_Fireball">
+                    <param id="0" name="Angle">180</param>
                 </action>
             </actions>
         </event-block>
@@ -25,10 +28,13 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Spawn another object" sid="8556211234753334" type="Wall">
-                    <param id="0" name="Object">Enemy1</param>
+                <action id="0" name="Spawn another object" sid="8556211234753334" type="EnemyBoss">
+                    <param id="0" name="Object">Enemy1_Fireball</param>
                     <param id="1" name="Layer">0</param>
-                    <param id="2" name="Image point">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-8" name="Set angle" sid="8472189595350025" type="Enemy1_Fireball">
+                    <param id="0" name="Angle">180</param>
                 </action>
             </actions>
         </event-block>
@@ -39,10 +45,13 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Spawn another object" sid="4541726939989162" type="Wall">
-                    <param id="0" name="Object">Enemy1</param>
+                <action id="0" name="Spawn another object" sid="4541726939989162" type="EnemyBoss">
+                    <param id="0" name="Object">Enemy1_Fireball</param>
                     <param id="1" name="Layer">0</param>
-                    <param id="2" name="Image point">2</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-8" name="Set angle" sid="1942313233019738" type="Enemy1_Fireball">
+                    <param id="0" name="Angle">180</param>
                 </action>
             </actions>
         </event-block>
