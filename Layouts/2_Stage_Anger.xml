@@ -2,7 +2,7 @@
 <c2layout>
     <name>2_Stage_Anger</name>
     <sid>9109182305797949</sid>
-    <event-sheet>1_Events_Denial</event-sheet>
+    <event-sheet>2_Events_Anger</event-sheet>
     <size>
         <width>12800</width>
         <height>768</height>
@@ -606,6 +606,28 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
+                <instance type="ColorWash" uid="144">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1066</x>
+                        <y>-857</y>
+                        <z>0</z>
+                        <width>1024</width>
+                        <height>768</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
                 <instance type="PlayerHealthBar" uid="125">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>

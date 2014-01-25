@@ -324,8 +324,36 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="PlayerName_TextBox" sid="3660684421068529">
+        <object-type name="Name_TextBox" sid="3660684421068529">
             <plugin id="TextBox" />
+        </object-type>
+        <object-type name="Button_Continue" sid="1540784515269342">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9524597653788674" speed="5">
+                    <frame duration="1" hotspotX="0.531746" hotspotY="0.506173" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ColorWash" sid="4479197955477975">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="1_Denial" pingpong="0" repeatcount="1" repeatto="0" sid="9625130372059906" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="2_Anger" pingpong="0" repeatcount="1" repeatto="0" sid="7610290622961253" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="3_Bargaining" pingpong="0" repeatcount="1" repeatto="0" sid="9734731500965442" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="4_Depression" pingpong="0" repeatcount="1" repeatto="0" sid="7142956886497259" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="5_Acceptance" pingpong="0" repeatcount="1" repeatto="0" sid="7539298799695136" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families>
@@ -345,6 +373,7 @@
     <layout-folder expanded="1">
         <layout>01_TitleScreen.xml</layout>
         <layout>02_Questions_1.xml</layout>
+        <layout>03_Questions_2.xml</layout>
         <layout>1_Stage_Denial.xml</layout>
         <layout>2_Stage_Anger.xml</layout>
         <layout>3_Stage_Bargaining.xml</layout>
@@ -363,7 +392,8 @@
         <event-sheet>4_Events_Depression.xml</event-sheet>
         <event-sheet>5_Events_Acceptance.xml</event-sheet>
         <event-sheet>7_Events_WinState.xml</event-sheet>
-        <event-sheet>02_Questions_1.xml</event-sheet>
+        <event-sheet>02_Events_Questions_1.xml</event-sheet>
+        <event-sheet>03_Events_Questions_2.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />

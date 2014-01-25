@@ -15,10 +15,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout>6_LoseState</layout>
         <layout>2_Stage_Anger</layout>
         <layout>3_Stage_Bargaining</layout>
-        <layout>4_Stage_Depression</layout>
+        <layout active="1">4_Stage_Depression</layout>
         <layout>5_Stage_Acceptance</layout>
         <layout>7_WinState</layout>
         <layout>02_Questions_1</layout>
+        <layout>03_Questions_2</layout>
         <event-sheet>00_Main_Controls</event-sheet>
         <event-sheet>1_Events_Denial</event-sheet>
         <event-sheet>6_Events_LoseState</event-sheet>
@@ -28,7 +29,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event-sheet>4_Events_Depression</event-sheet>
         <event-sheet>5_Events_Acceptance</event-sheet>
         <event-sheet>7_Events_WinState</event-sheet>
-        <event-sheet active="1">02_Questions_1</event-sheet>
+        <event-sheet>02_Events_Questions_1</event-sheet>
+        <event-sheet>03_Events_Questions_2</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

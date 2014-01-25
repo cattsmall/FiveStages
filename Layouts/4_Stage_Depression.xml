@@ -2,7 +2,7 @@
 <c2layout>
     <name>4_Stage_Depression</name>
     <sid>8054372751029243</sid>
-    <event-sheet>1_Events_Denial</event-sheet>
+    <event-sheet>4_Events_Depression</event-sheet>
     <size>
         <width>12800</width>
         <height>768</height>
@@ -323,7 +323,7 @@
                         <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>-1.604169965</hotspotY>
+                        <hotspotY>-1.604166627</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -352,7 +352,7 @@
                         <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>-1.604169965</hotspotY>
+                        <hotspotY>-1.604166627</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -381,7 +381,7 @@
                         <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>-1.604169965</hotspotY>
+                        <hotspotY>-1.604166627</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -410,7 +410,7 @@
                         <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>-1.604169965</hotspotY>
+                        <hotspotY>-1.604166627</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -468,7 +468,7 @@
                         <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>-1.604169965</hotspotY>
+                        <hotspotY>-1.604166627</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -497,7 +497,7 @@
                         <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>-1.604169965</hotspotY>
+                        <hotspotY>-1.604166627</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -597,8 +597,8 @@
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
             <parallax>
-                <x>1</x>
-                <y>1</y>
+                <x>0</x>
+                <y>0</y>
             </parallax>
             <zoom-rate>1</zoom-rate>
             <opacity>1</opacity>
@@ -606,6 +606,28 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
+                <instance type="ColorWash" uid="146">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1067</x>
+                        <y>-837</y>
+                        <z>0</z>
+                        <width>1024</width>
+                        <height>768</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
                 <instance type="PlayerHealthBar" uid="129">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>

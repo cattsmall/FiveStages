@@ -14,20 +14,24 @@
                         <action behavior="Platform" id="0" name="Set ignoring input" sid="9685307223502117" type="Player">
                             <param id="0" name="Input">1</param>
                         </action>
+                        <action id="-3" name="Set position" sid="7169518338496284" type="ColorWash">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
                         <action id="-3" name="Set position" sid="5987965714322285" type="Stage_FadeInScreen">
                             <param id="0" name="X">0</param>
                             <param id="1" name="Y">0</param>
                         </action>
                         <action id="-3" name="Set position" sid="5815418412191303" type="Stage_Number">
-                            <param id="0" name="X">512</param>
+                            <param id="0" name="X">425</param>
                             <param id="1" name="Y">128</param>
                         </action>
                         <action id="-3" name="Set position" sid="101860793349395" type="Stage_Title">
-                            <param id="0" name="X">24</param>
-                            <param id="1" name="Y">256</param>
+                            <param id="0" name="X">142</param>
+                            <param id="1" name="Y">156</param>
                         </action>
                         <action id="-3" name="Set position" sid="869334932360144" type="Stage_Quote">
-                            <param id="0" name="X">24</param>
+                            <param id="0" name="X">142</param>
                             <param id="1" name="Y">384</param>
                         </action>
                         <action id="-16" name="Wait" sid="1616864682156045" type="System">

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>02_Questions_1</name>
-    <sid>4335979737797679</sid>
-    <event-sheet>02_Events_Questions_1</event-sheet>
+    <name>03_Questions_2</name>
+    <sid>3899945465928458</sid>
+    <event-sheet>03_Events_Questions_2</event-sheet>
     <size>
         <width>1024</width>
         <height>768</height>
@@ -13,7 +13,7 @@
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
-        <layer name="Background" sid="4393169436853367">
+        <layer name="Background" sid="3242870648498445">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>0</transparent>
@@ -26,10 +26,42 @@
             <force-own-texture>0</force-own-texture>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
-            <instances />
+            <instances>
+                <instance type="Stage_FadeInScreen" uid="142">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <hotspot>Top-left</hotspot>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-64</x>
+                        <y>-987</y>
+                        <z>0</z>
+                        <width>1024</width>
+                        <height>768</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
             <effects />
         </layer>
-        <layer name="Foreground" sid="4242060289703539">
+        <layer name="Foreground" sid="7539707550844549">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
@@ -43,7 +75,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Button_Continue" uid="136">
+                <instance type="Button_Continue" uid="137">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -65,10 +97,10 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Name_TextBox" uid="133">
+                <instance type="Name_TextBox" uid="138">
                     <properties>
                         <text></text>
-                        <placeholder>Enter your first name</placeholder>
+                        <placeholder>Enter the name of a person who hurt you</placeholder>
                         <tooltip></tooltip>
                         <initial-visibility>Visible</initial-visibility>
                         <enabled>Yes</enabled>
@@ -91,9 +123,9 @@
                         <hotspotY>0</hotspotY>
                     </world>
                 </instance>
-                <instance type="Stage_Title" uid="134">
+                <instance type="Stage_Title" uid="139">
                     <properties>
-                        <text>What&apos;s your name?</text>
+                        <text>What&apos;s their name?</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Georgia,-96,400,0</font>
                         <color>0,0,0</color>
@@ -117,10 +149,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>96</x>
+                        <x>4</x>
                         <y>126</y>
                         <z>0</z>
-                        <width>814</width>
+                        <width>1017</width>
                         <height>133</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -132,7 +164,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="User Interface" sid="6774137020357208">
+        <layer name="User Interface" sid="9348919635228632">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
@@ -146,7 +178,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Stage_FadeOutScreen" uid="135">
+                <instance type="Stage_FadeOutScreen" uid="140">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
@@ -167,37 +199,6 @@
                     <world>
                         <x>2</x>
                         <y>-816</y>
-                        <z>0</z>
-                        <width>1024</width>
-                        <height>768</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Stage_FadeInScreen" uid="141">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Fade">
-                            <properties>
-                                <active-at-start>No</active-at-start>
-                                <fade-in-time>0</fade-in-time>
-                                <wait-time>0</wait-time>
-                                <fade-out-time>1</fade-out-time>
-                                <destroy>After fade out</destroy>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>-129</x>
-                        <y>-937</y>
                         <z>0</z>
                         <width>1024</width>
                         <height>768</height>

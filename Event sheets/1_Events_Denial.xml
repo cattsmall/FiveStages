@@ -4,6 +4,36 @@
     <name>1_Events_Denial</name>
     <events>
         <include>00_Main_Controls</include>
+        <event-group description="" sid="899528370220753" title="Stage 1 System Events">
+            <sub-events>
+                <event-block sid="900699356179782">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="5726558804685934" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="7508476957458941" type="ColorWash">
+                            <param id="0" name="Animation">&quot;1_Denial&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="4193449614503442" title="Stage 1 Player Events">
+            <sub-events>
+                <event-block sid="8578951935492795">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="9584716006727178" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="6189496142410155" type="Player">
+                            <param id="0" name="Instance variable">Shooting_Enabled</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="9284742810276859" title="Stage 1 Enemy Events">
             <sub-events>
                 <event-block sid="4151065456356979">
@@ -80,21 +110,6 @@
                         </action>
                         <action id="-2" name="Go to layout" sid="9922634210720033" type="System">
                             <param id="0" name="Layout">2_Stage_Anger</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-group>
-        <event-group description="" sid="4193449614503442" title="Stage 1 Player Events">
-            <sub-events>
-                <event-block sid="8578951935492795">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" sid="9584716006727178" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-13" name="Set boolean" sid="6189496142410155" type="Player">
-                            <param id="0" name="Instance variable">Shooting_Enabled</param>
-                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>

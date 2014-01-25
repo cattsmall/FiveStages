@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>03_Events_Questions_2</name>
+    <events>
+        <event-group description="" sid="5181825024834795" title="Question 2 Events">
+            <sub-events>
+                <event-block sid="8929597542973062">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="2575454747752435" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="4593941411806936" type="Stage_FadeInScreen">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="1169463817757104" type="Stage_FadeInScreen" />
+                    </actions>
+                    <sub-events>
+                        <comment>Fade out Title Elements after 5 seconds</comment>
+                    </sub-events>
+                </event-block>
+                <comment>Set Your ex&apos;s Name</comment>
+                <event-block sid="270581092655652">
+                    <conditions>
+                        <condition id="1" name="On text changed" sid="3796902044481376" type="Name_TextBox" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="5207634010204101" type="EnemyBoss">
+                            <param id="0" name="Instance variable">EnemyName</param>
+                            <param id="1" name="Value">Name_TextBox.Text</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Click to go to next question</comment>
+                <event-block sid="2407990886102603">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="7949574665857275" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">Button_Continue</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="3006248596998693" type="Stage_FadeOutScreen">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="9715108586774674" type="Stage_FadeOutScreen" />
+                        <action id="-16" name="Wait" sid="383115573488088" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="4831569700160374" type="System">
+                            <param id="0" name="Layout">1_Stage_Denial</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

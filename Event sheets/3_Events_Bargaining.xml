@@ -4,6 +4,21 @@
     <name>3_Events_Bargaining</name>
     <events>
         <include>00_Main_Controls</include>
+        <event-group description="" sid="1367666005743777" title="Stage 3 System Events">
+            <sub-events>
+                <event-block sid="900699356179782">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="5726558804685934" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="7508476957458941" type="ColorWash">
+                            <param id="0" name="Animation">&quot;3_Bargaining&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="3858348534934099" title="Stage 3 Player Events">
             <sub-events>
                 <event-block sid="8578951935492795">
