@@ -20,6 +20,14 @@
                         <comment>Fade out Title Elements after 5 seconds</comment>
                     </sub-events>
                 </event-block>
+                <event-block sid="8142175947864468">
+                    <conditions>
+                        <condition id="-3" name="On end of layout" sid="8301993983947134" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="33" name="Stop all" sid="1937913704940437" type="Audio" />
+                    </actions>
+                </event-block>
                 <comment>Set Your ex&apos;s Name</comment>
                 <event-block sid="270581092655652">
                     <conditions>

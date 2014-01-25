@@ -11,6 +11,7 @@
     <saved-with-version>15802</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -355,6 +356,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Audio" sid="52427021086166">
+            <plugin id="Audio" />
+        </object-type>
     </object-folder>
     <families>
         <family name="Enemies" plugin-id="Sprite" sid="53169161098689">
@@ -398,9 +402,68 @@
     <global-instances>
         <global-instance type="Keyboard" uid="4" />
         <global-instance type="Mouse" uid="92" />
+        <global-instance type="Audio" uid="148">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+                <speed-of-sound>5000</speed-of-sound>
+                <doppler-factor>1</doppler-factor>
+            </properties>
+        </global-instance>
     </global-instances>
-    <sounds-folder expanded="1" />
-    <music-folder expanded="1" />
+    <sounds-folder expanded="1">
+        <file name="Basic Jump 1.m4a" />
+        <file name="Basic Jump 1.ogg" />
+        <file name="Basic Jump 1.wav" />
+        <file name="Basic Jump 2.m4a" />
+        <file name="Basic Jump 2.ogg" />
+        <file name="Basic Jump 2.wav" />
+        <file name="Basic Jump 3.m4a" />
+        <file name="Basic Jump 3.ogg" />
+        <file name="Basic Jump 3.wav" />
+        <file name="Double Jump 1.m4a" />
+        <file name="Double Jump 1.ogg" />
+        <file name="Double Jump 1.wav" />
+        <file name="Double Jump 2.m4a" />
+        <file name="Double Jump 2.ogg" />
+        <file name="Double Jump 2.wav" />
+        <file name="Double Jump 3.m4a" />
+        <file name="Double Jump 3.ogg" />
+        <file name="Double Jump 3.wav" />
+        <file name="Fire Attack 1.m4a" />
+        <file name="Fire Attack 1.ogg" />
+        <file name="Fire Attack 1.wav" />
+        <file name="Fire Attack 2.m4a" />
+        <file name="Fire Attack 2.ogg" />
+        <file name="Fire Attack 2.wav" />
+        <file name="Fire Attack 3.m4a" />
+        <file name="Fire Attack 3.ogg" />
+        <file name="Fire Attack 3.wav" />
+        <file name="Player Hurt 1.m4a" />
+        <file name="Player Hurt 1.ogg" />
+        <file name="Player Hurt 1.wav" />
+        <file name="Player Hurt 2.m4a" />
+        <file name="Player Hurt 2.ogg" />
+        <file name="Player Hurt 2.wav" />
+        <file name="Player Hurt 3.m4a" />
+        <file name="Player Hurt 3.ogg" />
+        <file name="Player Hurt 3.wav" />
+    </sounds-folder>
+    <music-folder expanded="1">
+        <file name="denial.m4a" />
+        <file name="denial.ogg" />
+        <file name="denial.wav" />
+        <file name="intro.m4a" />
+        <file name="intro.ogg" />
+        <file name="intro.wav" />
+    </music-folder>
     <files-folder expanded="1">
         <file-folder expanded="0" name="Icons">
             <file name="icon-16.png" />

@@ -15,6 +15,12 @@
                             <param id="0" name="Animation">&quot;1_Denial&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
+                        <action id="0" name="Play" sid="3315178330164932" type="Audio">
+                            <param id="0" name="Audio file">denial</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>

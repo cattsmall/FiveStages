@@ -100,6 +100,22 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Regular Jump</comment>
+                <event-block sid="2046927378593324">
+                    <conditions>
+                        <condition behavior="Platform" id="3" name="Is jumping" sid="7849913112168651" type="Player" />
+                        <condition id="-4" name="Trigger once while true" sid="5109861676123773" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Play (by name)" sid="6872442960124549" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">choose(&quot;Basic Jump 1&quot;, &quot;Basic Jump 2&quot;, &quot;Basic Jump 3&quot;)</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>Double Jump</comment>
                 <event-block sid="7563296665761614">
                     <conditions>
@@ -112,6 +128,13 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="7" name="Play (by name)" sid="62988414940825" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">choose(&quot;Double Jump 1&quot;, &quot;Double Jump 2&quot;, &quot;Double Jump 3&quot;)</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                         <action behavior="Platform" id="9" name="Set vector Y" sid="9187986346014981" type="Player">
                             <param id="0" name="Vector Y">-800</param>
                         </action>
@@ -193,6 +216,13 @@
                             <param id="0" name="Instance variable">PlayerHealth</param>
                             <param id="1" name="Value">Enemies.EnemyStrength</param>
                         </action>
+                        <action id="7" name="Play (by name)" sid="931560612229912" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">choose(&quot;Player Hurt 1&quot;, &quot;Player Hurt 2&quot;, &quot;Player Hurt 3&quot;)</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="2168903042731842">
@@ -207,6 +237,7 @@
                         <action behavior="Platform" id="0" name="Set ignoring input" sid="267361517537445" type="Player">
                             <param id="0" name="Input">1</param>
                         </action>
+                        <action id="33" name="Stop all" sid="5389867052009556" type="Audio" />
                         <action id="-3" name="Set position" sid="9574240889645526" type="Stage_FadeOutScreen">
                             <param id="0" name="X">0</param>
                             <param id="1" name="Y">0</param>
