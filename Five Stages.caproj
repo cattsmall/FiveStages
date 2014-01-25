@@ -15,10 +15,11 @@
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
     </used-plugins>
     <used-behaviors>
-        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -96,7 +97,9 @@
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8724429720346691" speed="5">
-                    <frame duration="1" hotspotX="0.493671" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.493671" hotspotY="0.5">
+                        <image-point name="BulletArea" x="0.962025" y="0.503968" />
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -127,8 +130,44 @@
             <plugin id="TiledBg" />
             <texture />
         </object-type>
+        <object-type name="Enemy1" sid="9319291376072959">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1820198767603247" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="EnemyBoss" sid="4606992872890166">
+            <plugin id="Sprite" />
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7667805864111118" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PlayerBullet" sid="526469878310966">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="7919335990548444">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2415205008002771" speed="5">
+                    <frame duration="1" hotspotX="2.57143" hotspotY="2.28571" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
-    <families />
+    <families>
+        <family name="Enemies" plugin-id="Sprite" sid="53169161098689">
+            <members>
+                <member>Enemy1</member>
+                <member>EnemyBoss</member>
+            </members>
+        </family>
+    </families>
     <layout-folder expanded="1">
         <layout>Stage_Denial.xml</layout>
     </layout-folder>

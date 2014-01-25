@@ -3,29 +3,74 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Main_Controls</name>
     <events>
-        <event-block sid="9740245556442475">
-            <conditions>
-                <condition id="2" name="Key is down" sid="9289154135391667" type="Keyboard">
-                    <param id="0" name="Key">37 (Left arrow)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="7" name="Set mirrored" sid="8557823666657259" type="Player">
-                    <param id="0" name="State">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="6725354864491599">
-            <conditions>
-                <condition id="2" name="Key is down" sid="381718254991583" type="Keyboard">
-                    <param id="0" name="Key">39 (Right arrow)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="7" name="Set mirrored" sid="5715105484285831" type="Player">
-                    <param id="0" name="State">1</param>
-                </action>
-            </actions>
-        </event-block>
+        <event-group description="" sid="5052450420016781" title="Keyboard Events">
+            <sub-events>
+                <event-block sid="9740245556442475">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="9289154135391667" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="8557823666657259" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6725354864491599">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="381718254991583" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="5715105484285831" type="Player">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1695185182906098">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="7630911768428095" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="8872185027069346" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="2960979898233934" type="Player">
+                            <param id="0" name="Object">PlayerBullet</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8879705723828826">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="4443911281709064" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="9717770957068399" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="9969757009707248" type="Player">
+                            <param id="0" name="Object">PlayerBullet</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="1908458178531442" type="PlayerBullet">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="1775825506025233" title="Player Events">
+            <sub-events>
+                <event-block sid="5218984631280288">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
