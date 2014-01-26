@@ -15,6 +15,12 @@
                             <param id="0" name="Animation">&quot;4_Depression&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
+                        <action id="0" name="Play" sid="5505967540296551" type="Audio">
+                            <param id="0" name="Audio file">depression</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>

@@ -351,7 +351,6 @@
                         <PlayerHealth>1000</PlayerHealth>
                         <Shooting_Enabled>true</Shooting_Enabled>
                         <Double_Jump>false</Double_Jump>
-                        <PlayerName></PlayerName>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="ScrollTo">
@@ -363,7 +362,7 @@
                             <properties>
                                 <max-speed>500</max-speed>
                                 <acceleration>800</acceleration>
-                                <deceleration>1000000</deceleration>
+                                <deceleration>100000</deceleration>
                                 <jump-strength>1000</jump-strength>
                                 <gravity>3000</gravity>
                                 <max-fall-speed>1500</max-fall-speed>
@@ -397,11 +396,14 @@
                     <instance-variables>
                         <EnemyHealth>0</EnemyHealth>
                         <EnemyStrength>0</EnemyStrength>
-                        <EnemyName></EnemyName>
-                        <EnemyInsult1></EnemyInsult1>
-                        <EnemyInsult2></EnemyInsult2>
+                        <Can_Die>true</Can_Die>
+                        <EnemyMission>false</EnemyMission>
+                        <EnemySuccess>false</EnemySuccess>
+                        <EnemyScenario>0</EnemyScenario>
+                        <EnemyMissionText></EnemyMissionText>
                     </instance-variables>
                     <behavior-instances>
+                        <behavior-instance type="Flash" />
                         <behavior-instance type="8Direction">
                             <properties>
                                 <max-speed>200</max-speed>
@@ -411,6 +413,11 @@
                                 <set-angle>360 degree (smooth)</set-angle>
                                 <default-controls>No</default-controls>
                                 <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
@@ -473,8 +480,10 @@
                     <instance-variables>
                         <EnemyHealth>0</EnemyHealth>
                         <EnemyStrength>0</EnemyStrength>
+                        <Can_Die>true</Can_Die>
                     </instance-variables>
                     <behavior-instances>
+                        <behavior-instance type="Flash" />
                         <behavior-instance type="Bullet">
                             <properties>
                                 <speed>800</speed>
@@ -818,6 +827,29 @@
                         <hotspotY>0.512000024</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="GGJ2014" uid="33">
+                    <properties>
+                        <scml-file>GGJ2014.scml</scml-file>
+                        <starting-entity>Protagonist</starting-entity>
+                        <starting-animation>NewAnimation</starting-animation>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>303</x>
+                        <y>545</y>
+                        <z>0</z>
+                        <width>50</width>
+                        <height>50</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
                     </world>
                 </instance>
             </instances>

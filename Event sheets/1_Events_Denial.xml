@@ -66,6 +66,21 @@
         </event-group>
         <event-group description="" sid="9284742810276859" title="Stage 1 Enemy Events">
             <sub-events>
+                <event-block sid="6565053254867169">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="3765889284317769" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="4342658014319678" type="EnemyBoss">
+                            <param id="0" name="Instance variable">EnemyHealth</param>
+                            <param id="1" name="Value">100000</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="7940291932468569" type="EnemyBoss">
+                            <param id="0" name="Instance variable">Can_Die</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="4151065456356979">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="3270250570534931" type="System">
@@ -188,6 +203,9 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="187306281494615" type="Player">
+                            <param id="0" name="Input">1</param>
+                        </action>
                         <action behavior="8Direction" id="8" name="Set enabled" sid="6035807520004813" type="EnemyBoss">
                             <param id="0" name="State">1</param>
                         </action>

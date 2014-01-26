@@ -10,10 +10,11 @@
     <unique-id>2gg2fol44ceha</unique-id>
     <saved-with-version>15802</saved-with-version>
     <used-plugins>
-        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="BrashMonkey" id="Spriter" version="1">Scml</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
@@ -21,12 +22,13 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
-        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
-        <behavior author="Scirra" id="Persist" version="1">Persist</behavior>
-        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -98,7 +100,6 @@
                 <instance-variable name="PlayerHealth" sid="9491723657997477" type="number" />
                 <instance-variable name="Shooting_Enabled" sid="8601753929880126" type="boolean" />
                 <instance-variable name="Double_Jump" sid="6937945959577847" type="boolean" />
-                <instance-variable name="PlayerName" sid="9740937820154643" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="ScrollTo" sid="3548422391116199">
@@ -169,13 +170,17 @@
         <object-type name="EnemyBoss" sid="4606992872890166">
             <plugin id="Sprite" />
             <instance-variables>
-                <instance-variable name="EnemyName" sid="1349904632215799" type="string" />
-                <instance-variable name="EnemyInsult1" sid="9941941988065571" type="string" />
-                <instance-variable name="EnemyInsult2" sid="4877968044962386" type="string" />
+                <instance-variable name="EnemyMission" sid="9325229872371259" type="boolean" />
+                <instance-variable name="EnemySuccess" sid="7444132165599011" type="boolean" />
+                <instance-variable name="EnemyScenario" sid="4976535621137231" type="number" />
+                <instance-variable name="EnemyMissionText" sid="4351611952129429" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="2615820943550432">
                     <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="126109679732889">
+                    <behavior id="solid" />
                 </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
@@ -260,11 +265,6 @@
         </object-type>
         <object-type name="Enemy2_Spikes" sid="3767753379875516">
             <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Persist" sid="3472692444258518">
-                    <behavior id="Persist" />
-                </behavior-type>
-            </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2457538279940532" speed="5">
                     <frame duration="1" hotspotX="0.504" hotspotY="0.507614" />
@@ -313,11 +313,11 @@
             </behaviors>
             <texture />
         </object-type>
-        <object-type name="Enemy3" sid="1379838091446534">
+        <object-type name="Enemy3_Friend" sid="1379838091446534">
             <plugin id="Sprite" />
             <behaviors>
-                <behavior-type name="Bullet" sid="1827521869820196">
-                    <behavior id="Bullet" />
+                <behavior-type name="8Direction" sid="6516659219518543">
+                    <behavior id="EightDir" />
                 </behavior-type>
             </behaviors>
             <animation-folder expanded="1">
@@ -405,19 +405,54 @@
                 </behavior-type>
             </behaviors>
         </object-type>
+        <object-type name="Enemy_Wall" sid="3517601681694742">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="6150122329528806">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4535162062568833" speed="5">
+                    <frame duration="1" hotspotX="0.479167" hotspotY="0.512">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="GGJ2014" sid="9256557794748045">
+            <plugin id="Spriter" />
+            <behaviors>
+                <behavior-type name="Pin" sid="3703405230820869">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
     </object-folder>
     <families>
         <family name="Enemies" plugin-id="Sprite" sid="53169161098689">
             <members>
                 <member>Enemy1_Fireball</member>
                 <member>Enemy2_Spikes</member>
-                <member>Enemy3</member>
+                <member>Enemy3_Friend</member>
+                <member>Enemy_Wall</member>
                 <member>EnemyBoss</member>
             </members>
             <instance-variables>
                 <instance-variable name="EnemyHealth" sid="1889623308342491" type="number" />
                 <instance-variable name="EnemyStrength" sid="6051464124060006" type="number" />
+                <instance-variable name="Can_Die" sid="5284390352460776" type="boolean" />
             </instance-variables>
+            <behaviors>
+                <behavior-type name="Flash" sid="5833260826681371">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
         </family>
     </families>
     <layout-folder expanded="1">
@@ -504,13 +539,19 @@
         <file name="Double Jump 3.ogg" />
         <file name="Double Jump 33.wav" />
     </sounds-folder>
-    <music-folder expanded="0">
+    <music-folder expanded="1">
         <file name="denial.m4a" />
         <file name="denial.ogg" />
         <file name="denial.wav" />
         <file name="intro.m4a" />
         <file name="intro.ogg" />
         <file name="intro.wav" />
+        <file name="anger.m4a" />
+        <file name="anger.ogg" />
+        <file name="anger.wav" />
+        <file name="depression.m4a" />
+        <file name="depression.ogg" />
+        <file name="depression.wav" />
     </music-folder>
     <files-folder expanded="1">
         <file-folder expanded="0" name="Icons">

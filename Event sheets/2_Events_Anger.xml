@@ -15,6 +15,12 @@
                             <param id="0" name="Animation">&quot;2_Anger&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
+                        <action id="0" name="Play" sid="5637037016571457" type="Audio">
+                            <param id="0" name="Audio file">anger</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -33,6 +39,166 @@
                         <action id="-13" name="Set boolean" sid="3178675383912929" type="PlayerHealthBar">
                             <param id="0" name="Instance variable">TrueHealth</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7533011275329985" type="EnemyBoss">
+                            <param id="0" name="Instance variable">EnemyHealth</param>
+                            <param id="1" name="Value">2500</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="3285933587730642" type="EnemyBoss">
+                            <param id="0" name="Instance variable">Can_Die</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="3844401197067534" title="Stage 2 Enemy Events">
+            <sub-events>
+                <event-block sid="2698272477164845">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="945071190413206" type="System">
+                            <param id="0" name="Interval (seconds)">3</param>
+                        </condition>
+                        <condition id="-6" inverted="1" name="Every X seconds" sid="4769610814186855" type="System">
+                            <param id="0" name="Interval (seconds)">12</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="8007137954778879" type="Player">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="X co-ordinate">EnemyBoss.X - 768</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="8996912941955929" type="EnemyBoss">
+                            <param id="0" name="Object">Enemy_Text</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">3</param>
+                        </action>
+                        <action id="0" name="Set text" sid="3370460149285474" type="Enemy_Text">
+                            <param id="0" name="Text">choose(&quot;Fuck you &quot;&amp; PlayerName &amp; &quot;!&quot;, &quot;What is wrong with you?&quot;, &quot;I can&apos;t stand you!&quot;, &quot;I&apos;m tired of your shit!&quot;)</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="5143115512061881" type="Enemy_Text">
+                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="1210812750928353" type="Enemy_Text">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8468259796957309">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="4261906031216123" type="System">
+                            <param id="0" name="Interval (seconds)">3</param>
+                        </condition>
+                        <condition id="-6" inverted="1" name="Every X seconds" sid="2217531623258102" type="System">
+                            <param id="0" name="Interval (seconds)">6</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="5548194576473276" type="Player">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="X co-ordinate">EnemyBoss.X - 768</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="2868926263845095" type="EnemyBoss">
+                            <param id="0" name="Object">Enemy_Text</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="6692745730295475" type="Enemy_Text">
+                            <param id="0" name="Text">choose(&quot;Fuck you &quot;&amp; PlayerName &amp; &quot;!&quot;, &quot;What is wrong with you?&quot;, &quot;I can&apos;t stand you!&quot;, &quot;I&apos;m tired of your shit!&quot;)</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="4024898567020754" type="Enemy_Text">
+                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="2618977513914172" type="Enemy_Text">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1930668150434683">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="3144758915034019" type="System">
+                            <param id="0" name="Interval (seconds)">6</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="8683952743941614" type="Player">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="X co-ordinate">EnemyBoss.X - 768</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="7590862181923312" type="EnemyBoss">
+                            <param id="0" name="Object">Enemy_Text</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="0" name="Set text" sid="1304039747727202" type="Enemy_Text">
+                            <param id="0" name="Text">choose(&quot;Fuck you &quot;&amp; PlayerName &amp; &quot;!&quot;, &quot;What is wrong with you?&quot;, &quot;I can&apos;t stand you!&quot;, &quot;I&apos;m tired of your shit!&quot;)</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="6502094121979644" type="Enemy_Text">
+                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="8442497566786413" type="Enemy_Text">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6217065346952013">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="5933057366660626" type="System">
+                            <param id="0" name="Interval (seconds)">9</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="2149590944697483" type="Player">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="X co-ordinate">EnemyBoss.X - 768</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="5143739212632484" type="EnemyBoss">
+                            <param id="0" name="Object">Enemy_Text</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="5133477680770103" type="Enemy_Text">
+                            <param id="0" name="Text">choose(&quot;Fuck you &quot;&amp; PlayerName &amp; &quot;!&quot;, &quot;What is wrong with you?&quot;, &quot;I can&apos;t stand you!&quot;, &quot;I&apos;m tired of your shit!&quot;)</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="5204894413639955" type="Enemy_Text">
+                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="1051829038326938" type="Enemy_Text">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7495040366781766">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7829852012110516" type="EnemyBoss">
+                            <param id="0" name="Instance variable">EnemyHealth</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="5897383841251518" type="Player">
+                            <param id="0" name="Input">1</param>
+                        </action>
+                        <action behavior="8Direction" id="8" name="Set enabled" sid="5004041336274715" type="EnemyBoss">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="1713362471806176" type="EnemyBoss">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="4739663618566909" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="3378093808703778" type="Stage_FadeOutScreen">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="9975339926642889" type="Stage_FadeOutScreen" />
+                        <action id="-16" name="Wait" sid="2383376322695569" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="322873025534553" type="System">
+                            <param id="0" name="Layout">3_Stage_Bargaining</param>
                         </action>
                     </actions>
                 </event-block>

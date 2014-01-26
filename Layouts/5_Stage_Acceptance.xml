@@ -133,7 +133,6 @@
                         <PlayerHealth>1000</PlayerHealth>
                         <Shooting_Enabled>true</Shooting_Enabled>
                         <Double_Jump>false</Double_Jump>
-                        <PlayerName></PlayerName>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="ScrollTo">
@@ -145,8 +144,8 @@
                             <properties>
                                 <max-speed>500</max-speed>
                                 <acceleration>800</acceleration>
-                                <deceleration>800</deceleration>
-                                <jump-strength>1050</jump-strength>
+                                <deceleration>100000</deceleration>
+                                <jump-strength>1000</jump-strength>
                                 <gravity>3000</gravity>
                                 <max-fall-speed>1500</max-fall-speed>
                                 <default-controls>Yes</default-controls>
@@ -179,11 +178,14 @@
                     <instance-variables>
                         <EnemyHealth>0</EnemyHealth>
                         <EnemyStrength>0</EnemyStrength>
-                        <EnemyName></EnemyName>
-                        <EnemyInsult1></EnemyInsult1>
-                        <EnemyInsult2></EnemyInsult2>
+                        <Can_Die>true</Can_Die>
+                        <EnemyMission>false</EnemyMission>
+                        <EnemySuccess>false</EnemySuccess>
+                        <EnemyScenario>0</EnemyScenario>
+                        <EnemyMissionText></EnemyMissionText>
                     </instance-variables>
                     <behavior-instances>
+                        <behavior-instance type="Flash" />
                         <behavior-instance type="8Direction">
                             <properties>
                                 <max-speed>200</max-speed>
@@ -193,6 +195,11 @@
                                 <set-angle>360 degree (smooth)</set-angle>
                                 <default-controls>No</default-controls>
                                 <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
@@ -255,8 +262,10 @@
                     <instance-variables>
                         <EnemyHealth>0</EnemyHealth>
                         <EnemyStrength>0</EnemyStrength>
+                        <Can_Die>true</Can_Die>
                     </instance-variables>
                     <behavior-instances>
+                        <behavior-instance type="Flash" />
                         <behavior-instance type="Bullet">
                             <properties>
                                 <speed>800</speed>

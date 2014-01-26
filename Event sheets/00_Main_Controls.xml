@@ -14,6 +14,9 @@
                         <action behavior="ScrollTo" id="1" name="Set enabled" sid="8727275581590718" type="Player">
                             <param id="0" name="State">1</param>
                         </action>
+                        <action id="-1" name="Set X" sid="9337991932508877" type="Player">
+                            <param id="0" name="X">256</param>
+                        </action>
                         <action behavior="Platform" id="0" name="Set ignoring input" sid="9685307223502117" type="Player">
                             <param id="0" name="Input">1</param>
                         </action>
@@ -81,6 +84,14 @@
                             <param id="0" name="X">-800</param>
                             <param id="1" name="Y">384</param>
                         </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1242076821442264">
+                    <conditions>
+                        <condition id="-3" name="On end of layout" sid="2171733528669367" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="33" name="Stop all" sid="1552049994627422" type="Audio" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -230,6 +241,11 @@
                         <condition id="0" name="On collision with another object" sid="3862496328864514" type="Player">
                             <param id="0" name="Object">Enemies</param>
                         </condition>
+                        <condition id="-7" name="Compare instance variable" sid="9926285723579617" type="Enemies">
+                            <param id="0" name="Instance variable">EnemyStrength</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action behavior="ScrollTo" id="0" name="Shake" sid="5773463984996228" type="Player">
@@ -338,17 +354,30 @@
                         <condition id="0" name="On collision with another object" sid="9890247310791902" type="PlayerBullet">
                             <param id="0" name="Object">Enemies</param>
                         </condition>
+                        <condition id="-7" name="Compare instance variable" sid="687906563634462" type="Enemies">
+                            <param id="0" name="Instance variable">EnemyHealth</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-12" name="Subtract from" sid="470275201671051" type="Enemies">
                             <param id="0" name="Instance variable">EnemyHealth</param>
                             <param id="1" name="Value">50</param>
                         </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="865195497288242" type="Enemies">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.1</param>
+                        </action>
                         <action id="-9" name="Destroy" sid="1521984271069072" type="PlayerBullet" />
                     </actions>
                 </event-block>
-                <event-block sid="3459881118029408">
+                <event-block any="1" sid="3459881118029408">
                     <conditions>
+                        <condition id="0" name="On collision with another object" sid="5014353117125781" type="PlayerBullet">
+                            <param id="0" name="Object">Wall</param>
+                        </condition>
                         <condition id="-4" name="Is outside layout" sid="5555581584107086" type="PlayerBullet" />
                     </conditions>
                     <actions>
@@ -387,6 +416,7 @@
                         <action id="-9" name="Destroy" sid="6745483741934872" type="Enemy_Text" />
                     </actions>
                 </event-block>
+                <comment>Spikes</comment>
                 <event-block sid="2275126224774289">
                     <conditions>
                         <condition id="-18" name="On created" sid="7527651445751337" type="Enemy2_Spikes" />
@@ -394,6 +424,38 @@
                     <actions>
                         <action id="-10" name="Set value" sid="9950817547327833" type="Enemy2_Spikes">
                             <param id="0" name="Instance variable">EnemyStrength</param>
+                            <param id="1" name="Value">300</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="772245718924271" type="Enemy2_Spikes">
+                            <param id="0" name="Instance variable">Can_Die</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>&quot;Friends&quot;</comment>
+                <event-block sid="2576580445658386">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="2711160396319818" type="Enemy3_Friend" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="2548184345070589" type="Enemy3_Friend">
+                            <param id="0" name="Instance variable">EnemyHealth</param>
+                            <param id="1" name="Value">500</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="1449737507509387" type="Enemy3_Friend">
+                            <param id="0" name="Instance variable">EnemyStrength</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Walls</comment>
+                <event-block sid="9590438774024642">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="1429812032723824" type="Enemy_Wall" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="8177554256690525" type="Enemy_Wall">
+                            <param id="0" name="Instance variable">EnemyHealth</param>
                             <param id="1" name="Value">300</param>
                         </action>
                     </actions>
@@ -404,10 +466,6 @@
                         <condition id="-18" name="On created" sid="9673796198611457" type="EnemyBoss" />
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="9465136074153385" type="EnemyBoss">
-                            <param id="0" name="Instance variable">EnemyHealth</param>
-                            <param id="1" name="Value">5000</param>
-                        </action>
                         <action id="-10" name="Set value" sid="2723766544154229" type="EnemyBoss">
                             <param id="0" name="Instance variable">EnemyStrength</param>
                             <param id="1" name="Value">300</param>
@@ -416,14 +474,17 @@
                 </event-block>
                 <event-block sid="4574268873553122">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="6708166839789867" type="EnemyBoss">
+                        <condition id="-7" name="Compare instance variable" sid="6708166839789867" type="Enemies">
                             <param id="0" name="Instance variable">EnemyHealth</param>
                             <param id="1" name="Comparison">3</param>
                             <param id="2" name="Value">0</param>
                         </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="5395871822878726" type="Enemies">
+                            <param id="0" name="Instance variable">Can_Die</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="3440740505893719" type="EnemyBoss" />
+                        <action id="-9" name="Destroy" sid="3440740505893719" type="Enemies" />
                     </actions>
                 </event-block>
                 <event-block sid="452181849580834">
