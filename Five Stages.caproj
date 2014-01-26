@@ -20,6 +20,7 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
@@ -109,8 +110,18 @@
             </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8724429720346691" speed="5">
-                    <frame duration="1" hotspotX="0.493671" hotspotY="0.5">
-                        <image-point name="BulletArea" x="0.962025" y="0.503968" />
+                    <frame duration="1" hotspotX="0.491803" hotspotY="0.5">
+                        <image-point name="BulletArea" x="0.963115" y="0.503922" />
+                        <collision-poly>
+                            <point x="0.168033" y="0.0803922" />
+                            <point x="0.5" y="0.027451" />
+                            <point x="0.844262" y="0.0745098" />
+                            <point x="0.979508" y="0.5" />
+                            <point x="0.967213" y="0.984314" />
+                            <point x="0.5" y="0.713726" />
+                            <point x="0.0368852" y="0.982353" />
+                            <point x="0.0860656" y="0.5" />
+                        </collision-poly>
                     </frame>
                 </animation>
             </animation-folder>
@@ -162,11 +173,17 @@
                 <instance-variable name="EnemyInsult1" sid="9941941988065571" type="string" />
                 <instance-variable name="EnemyInsult2" sid="4877968044962386" type="string" />
             </instance-variables>
+            <behaviors>
+                <behavior-type name="8Direction" sid="2615820943550432">
+                    <behavior id="EightDir" />
+                </behavior-type>
+            </behaviors>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7667805864111118" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <image-point name="Head" x="0.5" y="0.092" />
-                        <image-point name="Foot" x="0.5" y="0.8" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.04">
+                        <image-point name="Arm" x="0.5" y="0.36" />
+                        <image-point name="Stomach" x="0.5" y="0.64" />
+                        <image-point name="Foot" x="0.5" y="0.92" />
                         <collision-poly>
                             <point x="1" y="1" />
                             <point x="0" y="1" />
@@ -311,6 +328,9 @@
         </object-type>
         <object-type name="PlayerHealthBar" sid="1039211984665461">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="TrueHealth" sid="3883187367864369" type="boolean" />
+            </instance-variables>
             <animation-folder expanded="1">
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6373989823270174" speed="5">
                     <frame duration="1" hotspotX="0" hotspotY="0.470588" />
@@ -359,6 +379,32 @@
         <object-type name="Audio" sid="52427021086166">
             <plugin id="Audio" />
         </object-type>
+        <object-type name="Player_Scrollto_Offset" sid="2073154194516202">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="ScrollTo" sid="6194423761376635">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder expanded="1">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4786333851656543" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Enemy_Text" sid="8038277069215599">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="EnemyHealth" sid="2079591479187749" type="number" />
+                <instance-variable name="EnemyStrength" sid="2321270899365867" type="number" />
+                <instance-variable name="EnemyTextWidth" sid="4548238322324949" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet" sid="2095605347205836">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
     </object-folder>
     <families>
         <family name="Enemies" plugin-id="Sprite" sid="53169161098689">
@@ -378,6 +424,7 @@
         <layout>01_TitleScreen.xml</layout>
         <layout>02_Questions_1.xml</layout>
         <layout>03_Questions_2.xml</layout>
+        <layout>04_Intermission.xml</layout>
         <layout>1_Stage_Denial.xml</layout>
         <layout>2_Stage_Anger.xml</layout>
         <layout>3_Stage_Bargaining.xml</layout>
@@ -398,6 +445,7 @@
         <event-sheet>7_Events_WinState.xml</event-sheet>
         <event-sheet>02_Events_Questions_1.xml</event-sheet>
         <event-sheet>03_Events_Questions_2.xml</event-sheet>
+        <event-sheet>04_Events_Intermission.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />
@@ -418,7 +466,7 @@
             </properties>
         </global-instance>
     </global-instances>
-    <sounds-folder expanded="1">
+    <sounds-folder expanded="0">
         <file name="Basic Jump 1.m4a" />
         <file name="Basic Jump 1.ogg" />
         <file name="Basic Jump 1.wav" />
@@ -428,15 +476,6 @@
         <file name="Basic Jump 3.m4a" />
         <file name="Basic Jump 3.ogg" />
         <file name="Basic Jump 3.wav" />
-        <file name="Double Jump 1.m4a" />
-        <file name="Double Jump 1.ogg" />
-        <file name="Double Jump 1.wav" />
-        <file name="Double Jump 2.m4a" />
-        <file name="Double Jump 2.ogg" />
-        <file name="Double Jump 2.wav" />
-        <file name="Double Jump 3.m4a" />
-        <file name="Double Jump 3.ogg" />
-        <file name="Double Jump 3.wav" />
         <file name="Fire Attack 1.m4a" />
         <file name="Fire Attack 1.ogg" />
         <file name="Fire Attack 1.wav" />
@@ -455,8 +494,17 @@
         <file name="Player Hurt 3.m4a" />
         <file name="Player Hurt 3.ogg" />
         <file name="Player Hurt 3.wav" />
+        <file name="Double Jump 1.m4a" />
+        <file name="Double Jump 1.ogg" />
+        <file name="Double Jump 1.wav" />
+        <file name="Double Jump 2.m4a" />
+        <file name="Double Jump 2.ogg" />
+        <file name="Double Jump 2.wav" />
+        <file name="Double Jump 3.m4a" />
+        <file name="Double Jump 3.ogg" />
+        <file name="Double Jump 33.wav" />
     </sounds-folder>
-    <music-folder expanded="1">
+    <music-folder expanded="0">
         <file name="denial.m4a" />
         <file name="denial.ogg" />
         <file name="denial.wav" />

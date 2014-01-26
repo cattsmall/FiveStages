@@ -5,29 +5,6 @@
     <events>
         <event-group description="" sid="5181825024834795" title="Question 2 Events">
             <sub-events>
-                <event-block sid="8929597542973062">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" sid="2575454747752435" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Set position" sid="4593941411806936" type="Stage_FadeInScreen">
-                            <param id="0" name="X">0</param>
-                            <param id="1" name="Y">0</param>
-                        </action>
-                        <action behavior="Fade" id="1" name="Start fade" sid="1169463817757104" type="Stage_FadeInScreen" />
-                    </actions>
-                    <sub-events>
-                        <comment>Fade out Title Elements after 5 seconds</comment>
-                    </sub-events>
-                </event-block>
-                <event-block sid="8142175947864468">
-                    <conditions>
-                        <condition id="-3" name="On end of layout" sid="8301993983947134" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="33" name="Stop all" sid="1937913704940437" type="Audio" />
-                    </actions>
-                </event-block>
                 <comment>Set Your ex&apos;s Name</comment>
                 <event-block sid="270581092655652">
                     <conditions>
@@ -50,16 +27,8 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-3" name="Set position" sid="3006248596998693" type="Stage_FadeOutScreen">
-                            <param id="0" name="X">0</param>
-                            <param id="1" name="Y">0</param>
-                        </action>
-                        <action behavior="Fade" id="1" name="Start fade" sid="9715108586774674" type="Stage_FadeOutScreen" />
-                        <action id="-16" name="Wait" sid="383115573488088" type="System">
-                            <param id="0" name="Seconds">1.0</param>
-                        </action>
                         <action id="-2" name="Go to layout" sid="4831569700160374" type="System">
-                            <param id="0" name="Layout">1_Stage_Denial</param>
+                            <param id="0" name="Layout">04_Intermission</param>
                         </action>
                     </actions>
                 </event-block>

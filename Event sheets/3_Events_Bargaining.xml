@@ -30,6 +30,10 @@
                             <param id="0" name="Instance variable">Shooting_Enabled</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action id="-13" name="Set boolean" sid="1485160926306046" type="PlayerHealthBar">
+                            <param id="0" name="Instance variable">TrueHealth</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>Trade Health for Shooting</comment>

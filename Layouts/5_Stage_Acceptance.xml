@@ -143,11 +143,11 @@
                         </behavior-instance>
                         <behavior-instance type="Platform">
                             <properties>
-                                <max-speed>330</max-speed>
+                                <max-speed>500</max-speed>
                                 <acceleration>800</acceleration>
                                 <deceleration>800</deceleration>
-                                <jump-strength>800</jump-strength>
-                                <gravity>2000</gravity>
+                                <jump-strength>1050</jump-strength>
+                                <gravity>3000</gravity>
                                 <max-fall-speed>1500</max-fall-speed>
                                 <default-controls>Yes</default-controls>
                                 <initial-state>Enabled</initial-state>
@@ -160,10 +160,10 @@
                         <x>339</x>
                         <y>660</y>
                         <z>0</z>
-                        <width>64</width>
-                        <height>128</height>
+                        <width>197.670883179</width>
+                        <height>259.047607422</height>
                         <depth>0</depth>
-                        <hotspotX>0.493670881</hotspotX>
+                        <hotspotX>0.491803288</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -183,6 +183,19 @@
                         <EnemyInsult1></EnemyInsult1>
                         <EnemyInsult2></EnemyInsult2>
                     </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="8Direction">
+                            <properties>
+                                <max-speed>200</max-speed>
+                                <acceleration>600</acceleration>
+                                <deceleration>500</deceleration>
+                                <directions>8 directions</directions>
+                                <set-angle>360 degree (smooth)</set-angle>
+                                <default-controls>No</default-controls>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -193,7 +206,7 @@
                         <height>611</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotY>0.039999999</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -246,7 +259,7 @@
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>1000</speed>
+                                <speed>800</speed>
                                 <acceleration>0</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
@@ -635,6 +648,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <TrueHealth>true</TrueHealth>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>

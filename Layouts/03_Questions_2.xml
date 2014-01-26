@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
     <name>03_Questions_2</name>
-    <sid>3899945465928458</sid>
+    <sid>8730938552789136</sid>
     <event-sheet>03_Events_Questions_2</event-sheet>
     <size>
         <width>1024</width>
@@ -13,7 +13,7 @@
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
-        <layer name="Background" sid="3242870648498445">
+        <layer name="Background" sid="4352630937681925">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>0</transparent>
@@ -27,7 +27,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Stage_FadeInScreen" uid="142">
+                <instance type="Stage_FadeInScreen" uid="135">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
@@ -61,7 +61,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="Foreground" sid="7539707550844549">
+        <layer name="Foreground" sid="4481763416757998">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
@@ -75,7 +75,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Button_Continue" uid="137">
+                <instance type="Button_Continue" uid="141">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -97,7 +97,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Name_TextBox" uid="138">
+                <instance type="Name_TextBox" uid="151">
                     <properties>
                         <text></text>
                         <placeholder>Enter the name of a person who hurt you</placeholder>
@@ -123,7 +123,7 @@
                         <hotspotY>0</hotspotY>
                     </world>
                 </instance>
-                <instance type="Stage_Title" uid="139">
+                <instance type="Stage_Title" uid="152">
                     <properties>
                         <text>What&apos;s their name?</text>
                         <initial-visibility>Visible</initial-visibility>
@@ -164,7 +164,7 @@
             </instances>
             <effects />
         </layer>
-        <layer name="User Interface" sid="9348919635228632">
+        <layer name="User Interface" sid="479652633717938">
             <initially-visible>1</initially-visible>
             <background-color>255,255,255</background-color>
             <transparent>1</transparent>
@@ -178,7 +178,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="Stage_FadeOutScreen" uid="140">
+                <instance type="Stage_FadeOutScreen" uid="153">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <hotspot>Top-left</hotspot>
