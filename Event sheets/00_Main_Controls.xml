@@ -231,6 +231,27 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Back to title screen</comment>
+                <event-block sid="1478261373805164">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="4311591536879899" type="Keyboard">
+                            <param id="0" name="Key">27 (Esc)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="2113178839401836" type="System">
+                            <param id="0" name="Layout">01_TitleScreen</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="650396438315885" type="System">
+                            <param id="0" name="Variable">PlayerName</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5270509514869155" type="System">
+                            <param id="0" name="Variable">EnemyName</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="1775825506025233" title="Player Events">
@@ -451,6 +472,18 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="3892195672537504">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8079651897065145" type="Enemy3_Friend">
+                            <param id="0" name="Instance variable">EnemyHealth</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="3079878793614931" type="Enemy3_Friend" />
+                    </actions>
+                </event-block>
                 <comment>Walls</comment>
                 <event-block sid="9590438774024642">
                     <conditions>
@@ -463,6 +496,18 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="2274619580264725">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="9124800525384243" type="Enemy_Wall">
+                            <param id="0" name="Instance variable">EnemyHealth</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="7664720174511575" type="Enemy_Wall" />
+                    </actions>
+                </event-block>
                 <comment>Bosses</comment>
                 <event-block sid="4175985693398582">
                     <conditions>
@@ -473,21 +518,6 @@
                             <param id="0" name="Instance variable">EnemyStrength</param>
                             <param id="1" name="Value">300</param>
                         </action>
-                    </actions>
-                </event-block>
-                <event-block sid="4574268873553122">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="6708166839789867" type="Enemies">
-                            <param id="0" name="Instance variable">EnemyHealth</param>
-                            <param id="1" name="Comparison">3</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                        <condition id="-8" name="Is boolean instance variable set" sid="5395871822878726" type="Enemies">
-                            <param id="0" name="Instance variable">Can_Die</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="3440740505893719" type="Enemies" />
                     </actions>
                 </event-block>
                 <event-block sid="452181849580834">

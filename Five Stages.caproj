@@ -317,7 +317,7 @@
         <object-type name="Enemy3_Friend" sid="1379838091446534">
             <plugin id="Sprite" />
             <behaviors>
-                <behavior-type name="8Direction" sid="6516659219518543">
+                <behavior-type name="8Direction" sid="5055204285426594">
                     <behavior id="EightDir" />
                 </behavior-type>
             </behaviors>

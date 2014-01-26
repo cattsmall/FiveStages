@@ -46,7 +46,21 @@
                         </action>
                         <action id="-13" name="Set boolean" sid="3285933587730642" type="EnemyBoss">
                             <param id="0" name="Instance variable">Can_Die</param>
-                            <param id="1" name="Value">0</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="8082369275521365" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1731093288215963">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="5566483026922913" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="6533169091713305" type="Player_Scrollto_Offset">
+                            <param id="0" name="X">Player.X+370</param>
+                            <param id="1" name="Y">Player.Y</param>
                         </action>
                     </actions>
                 </event-block>
@@ -54,6 +68,34 @@
         </event-group>
         <event-group description="" sid="3844401197067534" title="Stage 2 Enemy Events">
             <sub-events>
+                <event-block sid="2781780827636088">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="468878325450243" type="Enemy3_Friend" />
+                        <condition id="-1" name="Compare X" sid="8300854592012149" type="Enemy3_Friend">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">Player.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="5556896555982528" type="Enemy3_Friend">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8470639760092101">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="465964425430906" type="Enemy3_Friend" />
+                        <condition id="-1" name="Compare X" sid="2694936005041054" type="Enemy3_Friend">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">Player.X</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="7075617506369022" type="Enemy3_Friend">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="2698272477164845">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="945071190413206" type="System">
@@ -182,6 +224,10 @@
                         </action>
                         <action behavior="Platform" id="0" name="Set ignoring input" sid="5897383841251518" type="Player">
                             <param id="0" name="Input">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="4648862680189089" type="Player">
+                            <param id="0" name="Instance variable">Shooting_Enabled</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                         <action behavior="8Direction" id="8" name="Set enabled" sid="5004041336274715" type="EnemyBoss">
                             <param id="0" name="State">1</param>
