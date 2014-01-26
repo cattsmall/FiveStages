@@ -42,6 +42,16 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="1896994800279109">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7648941527906807" type="PlayerBullet">
+                            <param id="0" name="Object">EnemyBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="743106253325539" type="PlayerBullet" />
+                    </actions>
+                </event-block>
                 <comment>Trade Health for Things</comment>
                 <event-block sid="6497980738008233">
                     <conditions>
@@ -94,26 +104,7 @@
                             <param id="0" name="Instance variable">PlayerHealth</param>
                             <param id="1" name="Value">10</param>
                         </action>
-                    </actions>
-                </event-block>
-                <event-block sid="1896994800279109">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="7648941527906807" type="PlayerBullet">
-                            <param id="0" name="Object">EnemyBoss</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="7307382644672254" type="EnemyBoss">
-                            <param id="0" name="Instance variable">EnemyScenario</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-11" name="Add to" sid="2992581277398205" type="EnemyBoss">
-                            <param id="0" name="Instance variable">EnemyHealth</param>
-                            <param id="1" name="Value">100</param>
-                        </action>
-                        <action behavior="Flash" id="1" name="Stop flashing" sid="1813912136742728" type="EnemyBoss" />
-                        <action id="-13" name="Set boolean" sid="5687879046064627" type="EnemyBoss">
+                        <action id="-13" name="Set boolean" sid="8051286505841166" type="EnemyBoss">
                             <param id="0" name="Instance variable">EnemySuccess</param>
                             <param id="1" name="Value">1</param>
                         </action>
@@ -268,24 +259,52 @@
                                             <param id="0" name="Instance variable">EnemyHealth</param>
                                             <param id="1" name="Value">100</param>
                                         </action>
-                                        <action id="0" name="Spawn another object" sid="5507194278319564" type="EnemyBoss">
+                                        <action behavior="Flash" id="0" name="Flash" sid="1784429959953259" type="EnemyBoss">
+                                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                            <param id="2" name="Duration">0.75</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="4996367646458223" type="EnemyBoss">
+                                            <param id="0" name="Object">Enemy_Text</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="9632367401061642" type="Enemy_Text">
+                                            <param id="0" name="Text">&quot;I don&apos;t even know why I tried.&quot;</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="4103151779418701" type="Enemy_Text">
+                                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="9283764173021127" type="Enemy_Text">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="4377583492129304" type="EnemyBoss">
+                                            <param id="0" name="Object">Enemy_Text</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">2</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="4152187354534333" type="Enemy_Text">
+                                            <param id="0" name="Text">&quot;You&apos;ll never change!&quot;</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="2396976973662973" type="Enemy_Text">
+                                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="6568613460529693" type="Enemy_Text">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="2728274376166877" type="EnemyBoss">
                                             <param id="0" name="Object">Enemy_Text</param>
                                             <param id="1" name="Layer">0</param>
                                             <param id="2" name="Image point">3</param>
                                         </action>
-                                        <action id="0" name="Set text" sid="3553414089195001" type="Enemy_Text">
+                                        <action id="0" name="Set text" sid="584994080381843" type="Enemy_Text">
                                             <param id="0" name="Text">&quot;You never fucking listen!&quot;</param>
                                         </action>
-                                        <action id="-5" name="Set width" sid="8013816784681545" type="Enemy_Text">
+                                        <action id="-5" name="Set width" sid="973022327618431" type="Enemy_Text">
                                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
                                         </action>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="4129151097743355" type="Enemy_Text">
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="3224484694676893" type="Enemy_Text">
                                             <param id="0" name="Angle">180</param>
-                                        </action>
-                                        <action behavior="Flash" id="0" name="Flash" sid="2941979430604264" type="EnemyBoss">
-                                            <param id="0" name="&apos;On&apos; time">0.05</param>
-                                            <param id="1" name="&apos;Off&apos; time">0.05</param>
-                                            <param id="2" name="Duration">0.75</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -352,24 +371,52 @@
                                             <param id="0" name="Instance variable">EnemyHealth</param>
                                             <param id="1" name="Value">100</param>
                                         </action>
-                                        <action id="0" name="Spawn another object" sid="3478986244460419" type="EnemyBoss">
+                                        <action behavior="Flash" id="0" name="Flash" sid="9936908312335757" type="EnemyBoss">
+                                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                            <param id="2" name="Duration">0.75</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="7996220143766594" type="EnemyBoss">
+                                            <param id="0" name="Object">Enemy_Text</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="7999036928897652" type="Enemy_Text">
+                                            <param id="0" name="Text">&quot;I don&apos;t even know why I tried.&quot;</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="5339888958079473" type="Enemy_Text">
+                                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="4648661277686999" type="Enemy_Text">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="6391528205633917" type="EnemyBoss">
+                                            <param id="0" name="Object">Enemy_Text</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">2</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="8255474312556834" type="Enemy_Text">
+                                            <param id="0" name="Text">&quot;You&apos;ll never change!&quot;</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="7897916190308013" type="Enemy_Text">
+                                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="5401585670956102" type="Enemy_Text">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="5220702972375981" type="EnemyBoss">
                                             <param id="0" name="Object">Enemy_Text</param>
                                             <param id="1" name="Layer">0</param>
                                             <param id="2" name="Image point">3</param>
                                         </action>
-                                        <action id="0" name="Set text" sid="7999317626616991" type="Enemy_Text">
+                                        <action id="0" name="Set text" sid="858643330875744" type="Enemy_Text">
                                             <param id="0" name="Text">&quot;You never fucking listen!&quot;</param>
                                         </action>
-                                        <action id="-5" name="Set width" sid="8021322037587135" type="Enemy_Text">
+                                        <action id="-5" name="Set width" sid="7089376098577548" type="Enemy_Text">
                                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
                                         </action>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="9585266798377785" type="Enemy_Text">
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="299530567366924" type="Enemy_Text">
                                             <param id="0" name="Angle">180</param>
-                                        </action>
-                                        <action behavior="Flash" id="0" name="Flash" sid="8647868988693543" type="EnemyBoss">
-                                            <param id="0" name="&apos;On&apos; time">0.05</param>
-                                            <param id="1" name="&apos;Off&apos; time">0.05</param>
-                                            <param id="2" name="Duration">0.75</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -428,24 +475,52 @@
                                             <param id="0" name="Instance variable">EnemyHealth</param>
                                             <param id="1" name="Value">100</param>
                                         </action>
-                                        <action id="0" name="Spawn another object" sid="2047807851003521" type="EnemyBoss">
+                                        <action behavior="Flash" id="0" name="Flash" sid="2467031219987471" type="EnemyBoss">
+                                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                            <param id="2" name="Duration">0.75</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="9975320083679996" type="EnemyBoss">
+                                            <param id="0" name="Object">Enemy_Text</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="2506999910338534" type="Enemy_Text">
+                                            <param id="0" name="Text">&quot;I don&apos;t even know why I tried.&quot;</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="654390082560638" type="Enemy_Text">
+                                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="4245697657108523" type="Enemy_Text">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="5693478390429214" type="EnemyBoss">
+                                            <param id="0" name="Object">Enemy_Text</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">2</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="7528391255786492" type="Enemy_Text">
+                                            <param id="0" name="Text">&quot;You&apos;ll never change!&quot;</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="306248602542503" type="Enemy_Text">
+                                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="6211561298866252" type="Enemy_Text">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="8472519324320583" type="EnemyBoss">
                                             <param id="0" name="Object">Enemy_Text</param>
                                             <param id="1" name="Layer">0</param>
                                             <param id="2" name="Image point">3</param>
                                         </action>
-                                        <action id="0" name="Set text" sid="2663605506283787" type="Enemy_Text">
+                                        <action id="0" name="Set text" sid="6689587308707771" type="Enemy_Text">
                                             <param id="0" name="Text">&quot;You never fucking listen!&quot;</param>
                                         </action>
-                                        <action id="-5" name="Set width" sid="7218847265195675" type="Enemy_Text">
+                                        <action id="-5" name="Set width" sid="1888457592862503" type="Enemy_Text">
                                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
                                         </action>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="4472997448593345" type="Enemy_Text">
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="4692999034965567" type="Enemy_Text">
                                             <param id="0" name="Angle">180</param>
-                                        </action>
-                                        <action behavior="Flash" id="0" name="Flash" sid="9716201676428712" type="EnemyBoss">
-                                            <param id="0" name="&apos;On&apos; time">0.05</param>
-                                            <param id="1" name="&apos;Off&apos; time">0.05</param>
-                                            <param id="2" name="Duration">0.75</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -504,13 +579,18 @@
                                             <param id="0" name="Instance variable">EnemyHealth</param>
                                             <param id="1" name="Value">100</param>
                                         </action>
+                                        <action behavior="Flash" id="0" name="Flash" sid="3393285384634367" type="EnemyBoss">
+                                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                            <param id="2" name="Duration">0.75</param>
+                                        </action>
                                         <action id="0" name="Spawn another object" sid="9639484680272119" type="EnemyBoss">
                                             <param id="0" name="Object">Enemy_Text</param>
                                             <param id="1" name="Layer">0</param>
-                                            <param id="2" name="Image point">3</param>
+                                            <param id="2" name="Image point">0</param>
                                         </action>
-                                        <action id="0" name="Set text" sid="3107023660463145" type="Enemy_Text">
-                                            <param id="0" name="Text">&quot;You never fucking listen!&quot;</param>
+                                        <action id="0" name="Set text" sid="2598619548509719" type="Enemy_Text">
+                                            <param id="0" name="Text">&quot;I don&apos;t even know why I tried.&quot;</param>
                                         </action>
                                         <action id="-5" name="Set width" sid="6097018243477272" type="Enemy_Text">
                                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
@@ -518,10 +598,33 @@
                                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="1647554396047734" type="Enemy_Text">
                                             <param id="0" name="Angle">180</param>
                                         </action>
-                                        <action behavior="Flash" id="0" name="Flash" sid="3393285384634367" type="EnemyBoss">
-                                            <param id="0" name="&apos;On&apos; time">0.05</param>
-                                            <param id="1" name="&apos;Off&apos; time">0.05</param>
-                                            <param id="2" name="Duration">0.75</param>
+                                        <action id="0" name="Spawn another object" sid="3336091845216942" type="EnemyBoss">
+                                            <param id="0" name="Object">Enemy_Text</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">2</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="2967933323840732" type="Enemy_Text">
+                                            <param id="0" name="Text">&quot;You&apos;ll never change!&quot;</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="3853547087055616" type="Enemy_Text">
+                                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="9077383798801911" type="Enemy_Text">
+                                            <param id="0" name="Angle">180</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="6180895290492822" type="EnemyBoss">
+                                            <param id="0" name="Object">Enemy_Text</param>
+                                            <param id="1" name="Layer">0</param>
+                                            <param id="2" name="Image point">3</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="3107023660463145" type="Enemy_Text">
+                                            <param id="0" name="Text">&quot;You never fucking listen!&quot;</param>
+                                        </action>
+                                        <action id="-5" name="Set width" sid="6386213369092892" type="Enemy_Text">
+                                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                                        </action>
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="6813316670327828" type="Enemy_Text">
+                                            <param id="0" name="Angle">180</param>
                                         </action>
                                     </actions>
                                 </event-block>

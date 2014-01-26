@@ -359,6 +359,9 @@
                             <param id="1" name="Comparison">5</param>
                             <param id="2" name="Value">1</param>
                         </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="834331425118837" type="Enemies">
+                            <param id="0" name="Instance variable">Can_Die</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-12" name="Subtract from" sid="470275201671051" type="Enemies">
