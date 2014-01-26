@@ -101,10 +101,12 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <PlayerHealth>1000</PlayerHealth>
+                        <PlayerHealth>1500</PlayerHealth>
                         <Shooting_Enabled>true</Shooting_Enabled>
                         <Double_Jump>false</Double_Jump>
-                        <PlayerSpeed>0</PlayerSpeed>
+                        <Quote1></Quote1>
+                        <Quote2></Quote2>
+                        <Quote3></Quote3>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="ScrollTo">
@@ -131,11 +133,11 @@
                         <x>185</x>
                         <y>635</y>
                         <z>0</z>
-                        <width>86</width>
-                        <height>180</height>
+                        <width>109.262298584</width>
+                        <height>181.058822632</height>
                         <depth>0</depth>
-                        <hotspotX>0.491803288</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.50967741</hotspotX>
+                        <hotspotY>0.500974655</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -180,13 +182,13 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>794</x>
-                        <y>138</y>
+                        <y>376</y>
                         <z>0</z>
-                        <width>406</width>
-                        <height>611</height>
+                        <width>388</width>
+                        <height>453</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.039999999</hotspotY>
+                        <hotspotX>0.432989687</hotspotX>
+                        <hotspotY>0.233995587</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -422,11 +424,11 @@
                         <x>721</x>
                         <y>81</y>
                         <z>0</z>
-                        <width>251.999984741</width>
-                        <height>17</height>
+                        <width>199.999984741</width>
+                        <height>20</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
-                        <hotspotY>0.470588237</hotspotY>
+                        <hotspotY>0.449999988</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -441,14 +443,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>684</x>
-                        <y>79</y>
+                        <x>680.348327637</x>
+                        <y>78.050003052</y>
                         <z>0</z>
-                        <width>26</width>
-                        <height>19</height>
+                        <width>27</width>
+                        <height>26</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.473684222</hotspotY>
+                        <hotspotX>0.504672885</hotspotX>
+                        <hotspotY>0.471153855</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -622,6 +624,44 @@
                         <z>0</z>
                         <width>1024</width>
                         <height>768</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Stage_Instructions" uid="91">
+                    <properties>
+                        <text>Move and jump using arrow keys. Shoot on command using spacebar.</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-24,400,0</font>
+                        <color>153,153,153</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>-49</x>
+                        <y>-653</y>
+                        <z>0</z>
+                        <width>814</width>
+                        <height>63</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>

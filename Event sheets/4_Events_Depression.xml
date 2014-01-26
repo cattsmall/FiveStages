@@ -15,7 +15,7 @@
                             <param id="0" name="Animation">&quot;4_Depression&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
-                        <action id="0" name="Play" sid="5505967540296551" type="Audio">
+                        <action id="0" name="Play" sid="1386361607867809" type="Audio">
                             <param id="0" name="Audio file">depression</param>
                             <param id="2" name="Loop">1</param>
                             <param id="3" name="Volume">0</param>
@@ -26,6 +26,18 @@
                         </action>
                         <action id="-16" name="Wait" sid="7491932118634023" type="System">
                             <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="948283366201599" type="Player">
+                            <param id="0" name="Instance variable">Quote1</param>
+                            <param id="1" name="Value">&quot;I&apos;m so stupid.&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="535812829461684" type="Player">
+                            <param id="0" name="Instance variable">Quote2</param>
+                            <param id="1" name="Value">&quot;Why am I here?&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8790144573210273" type="Player">
+                            <param id="0" name="Instance variable">Quote3</param>
+                            <param id="1" name="Value">&quot;I feel so alone.&quot;</param>
                         </action>
                     </actions>
                 </event-block>

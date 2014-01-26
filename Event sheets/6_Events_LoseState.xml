@@ -3,6 +3,37 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>6_Events_LoseState</name>
     <events>
-        <include>00_Main_Controls</include>
+        <event-block sid="8330549937740621">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="2203660641324891" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="5578059972921599" type="Audio">
+                    <param id="0" name="Audio file">intro</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                </action>
+                <action id="-3" name="Set position" sid="4096613787617143" type="Stage_FadeInScreen">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">0</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="7442949182462397" type="Stage_FadeInScreen" />
+                <action id="-16" name="Wait" sid="3708679831493202" type="System">
+                    <param id="0" name="Seconds">4</param>
+                </action>
+                <action id="-3" name="Set position" sid="4298363714985627" type="Stage_FadeOutScreen">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">0</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="7140028572779447" type="Stage_FadeOutScreen" />
+                <action id="-16" name="Wait" sid="8063901459845461" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="4511860225609688" type="System">
+                    <param id="0" name="Layout">04_Intermission</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

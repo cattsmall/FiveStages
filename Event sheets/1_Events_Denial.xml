@@ -15,7 +15,7 @@
                             <param id="0" name="Animation">&quot;1_Denial&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
-                        <action id="0" name="Play" sid="3315178330164932" type="Audio">
+                        <action id="0" name="Play" sid="5896667567305225" type="Audio">
                             <param id="0" name="Audio file">denial</param>
                             <param id="2" name="Loop">1</param>
                             <param id="3" name="Volume">0</param>
@@ -79,6 +79,88 @@
                             <param id="0" name="Instance variable">Can_Die</param>
                             <param id="1" name="Value">0</param>
                         </action>
+                        <action id="0" name="Spawn another object" sid="9975219323998363" type="EnemyBoss">
+                            <param id="0" name="Object">Enemy_Text</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">3</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9660956976921219" type="Enemy_Text">
+                            <param id="0" name="Text">choose(&quot;Let&apos;s break up.&quot;, &quot;We&apos;re done.&quot;, &quot;Stop calling me!&quot;)</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="9130873908395591" type="Enemy_Text">
+                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="8102386687761945" type="Enemy_Text">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="534211500977892" type="EnemyBoss">
+                            <param id="0" name="Object">Enemy_Text</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9987255707335545" type="Enemy_Text">
+                            <param id="0" name="Text">choose(&quot;Let&apos;s break up.&quot;, &quot;We&apos;re done.&quot;, &quot;Stop calling me!&quot;)</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="7755078662358506" type="Enemy_Text">
+                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="1516282735589988" type="Enemy_Text">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="995748138337959">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="5981649463789744" type="System">
+                            <param id="0" name="Interval (seconds)">3</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="3138057192570381" type="Player">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">EnemyBoss.X - 768</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="2651835943618136" type="EnemyBoss">
+                            <param id="0" name="Object">Enemy_Text</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="7997947368504099" type="Enemy_Text">
+                            <param id="0" name="Text">choose(&quot;Let&apos;s break up.&quot;, &quot;We&apos;re done.&quot;, &quot;Stop calling me!&quot;)</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="4452351308486697" type="Enemy_Text">
+                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="1600746393960872" type="Enemy_Text">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5898496248425952">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="4118333837958017" type="System">
+                            <param id="0" name="Interval (seconds)">12</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="3430713231528428" type="Player">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">EnemyBoss.X - 768</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="391034963742017" type="EnemyBoss">
+                            <param id="0" name="Object">Enemy_Text</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="0" name="Set text" sid="6280220593345734" type="Enemy_Text">
+                            <param id="0" name="Text">choose(&quot;Let&apos;s break up.&quot;, &quot;We&apos;re done.&quot;, &quot;Stop calling me!&quot;)</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="9083303959513834" type="Enemy_Text">
+                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="5023550676103057" type="Enemy_Text">
+                            <param id="0" name="Angle">180</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="4151065456356979">
@@ -101,96 +183,12 @@
                             <param id="2" name="Image point">3</param>
                         </action>
                         <action id="0" name="Set text" sid="5717413245448991" type="Enemy_Text">
-                            <param id="0" name="Text">choose(&quot;Let&apos;s break up.&quot;, &quot;I don&apos;t want to be with you anymore.&quot;, &quot;Stop calling me!&quot;)</param>
+                            <param id="0" name="Text">choose(&quot;Let&apos;s break up.&quot;, &quot;We&apos;re done.&quot;, &quot;Stop calling me!&quot;)</param>
                         </action>
                         <action id="-5" name="Set width" sid="8006468703271284" type="Enemy_Text">
                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
                         </action>
                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="3100937567880315" type="Enemy_Text">
-                            <param id="0" name="Angle">180</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="995748138337959">
-                    <conditions>
-                        <condition id="-6" name="Every X seconds" sid="5981649463789744" type="System">
-                            <param id="0" name="Interval (seconds)">3</param>
-                        </condition>
-                        <condition id="-6" inverted="1" name="Every X seconds" sid="7003453619105834" type="System">
-                            <param id="0" name="Interval (seconds)">6</param>
-                        </condition>
-                        <condition id="-1" name="Compare X" sid="3138057192570381" type="Player">
-                            <param id="0" name="Comparison">2</param>
-                            <param id="1" name="X co-ordinate">EnemyBoss.X - 768</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="2651835943618136" type="EnemyBoss">
-                            <param id="0" name="Object">Enemy_Text</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="Image point">0</param>
-                        </action>
-                        <action id="0" name="Set text" sid="5876385972491708" type="Enemy_Text">
-                            <param id="0" name="Text">choose(&quot;Let&apos;s break up.&quot;, &quot;I don&apos;t want to be with you anymore.&quot;, &quot;Stop calling me!&quot;)</param>
-                        </action>
-                        <action id="-5" name="Set width" sid="4452351308486697" type="Enemy_Text">
-                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
-                        </action>
-                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="1600746393960872" type="Enemy_Text">
-                            <param id="0" name="Angle">180</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="5898496248425952">
-                    <conditions>
-                        <condition id="-6" name="Every X seconds" sid="4118333837958017" type="System">
-                            <param id="0" name="Interval (seconds)">6</param>
-                        </condition>
-                        <condition id="-1" name="Compare X" sid="3430713231528428" type="Player">
-                            <param id="0" name="Comparison">2</param>
-                            <param id="1" name="X co-ordinate">EnemyBoss.X - 768</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="391034963742017" type="EnemyBoss">
-                            <param id="0" name="Object">Enemy_Text</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="Image point">2</param>
-                        </action>
-                        <action id="0" name="Set text" sid="33966520180529" type="Enemy_Text">
-                            <param id="0" name="Text">choose(&quot;Let&apos;s break up.&quot;, &quot;I don&apos;t want to be with you anymore.&quot;, &quot;Stop calling me!&quot;)</param>
-                        </action>
-                        <action id="-5" name="Set width" sid="9083303959513834" type="Enemy_Text">
-                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
-                        </action>
-                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="5023550676103057" type="Enemy_Text">
-                            <param id="0" name="Angle">180</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="3565230646162428">
-                    <conditions>
-                        <condition id="-6" name="Every X seconds" sid="1800057467615271" type="System">
-                            <param id="0" name="Interval (seconds)">9</param>
-                        </condition>
-                        <condition id="-1" name="Compare X" sid="8154723101801124" type="Player">
-                            <param id="0" name="Comparison">2</param>
-                            <param id="1" name="X co-ordinate">EnemyBoss.X - 768</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="4246686191218986" type="EnemyBoss">
-                            <param id="0" name="Object">Enemy_Text</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="Image point">1</param>
-                        </action>
-                        <action id="0" name="Set text" sid="1310685547285521" type="Enemy_Text">
-                            <param id="0" name="Text">choose(&quot;Let&apos;s break up.&quot;, &quot;I don&apos;t want to be with you anymore.&quot;, &quot;Stop calling me!&quot;)</param>
-                        </action>
-                        <action id="-5" name="Set width" sid="3884416682310296" type="Enemy_Text">
-                            <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
-                        </action>
-                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="7651795891144217" type="Enemy_Text">
                             <param id="0" name="Angle">180</param>
                         </action>
                     </actions>

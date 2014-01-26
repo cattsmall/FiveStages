@@ -15,8 +15,26 @@
                             <param id="0" name="Animation">&quot;5_Acceptance&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
+                        <action id="0" name="Play" sid="5383575043574919" type="Audio">
+                            <param id="0" name="Audio file">acceptance</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                        </action>
                         <action behavior="ScrollTo" id="1" name="Set enabled" sid="9571688519807283" type="Player">
                             <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4159495167692453" type="Player">
+                            <param id="0" name="Instance variable">Quote1</param>
+                            <param id="1" name="Value">&quot;No, I&apos;d rather not.&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8120307593029004" type="Player">
+                            <param id="0" name="Instance variable">Quote2</param>
+                            <param id="1" name="Value">&quot;Thanks, but no thanks.&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9030158636150401" type="Player">
+                            <param id="0" name="Instance variable">Quote3</param>
+                            <param id="1" name="Value">&quot;We&apos;re over.&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -38,6 +56,17 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="1020653488450133" type="Player">
+                            <param id="0" name="Input">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="946248473255617" type="Stage_FadeOutScreen">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="8660938870569118" type="Stage_FadeOutScreen" />
+                        <action id="-16" name="Wait" sid="2111661551524899" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
                         <action id="-2" name="Go to layout" sid="8688991055624204" type="System">
                             <param id="0" name="Layout">6_LoseState</param>
                         </action>
@@ -49,11 +78,20 @@
                 </event-block>
                 <event-block sid="568132525180848">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="1660930584295472" type="PlayerBullet">
-                            <param id="0" name="Object">EnemyBoss</param>
-                        </condition>
+                        <condition id="-18" name="On created" sid="1660930584295472" type="Player_Text" />
                     </conditions>
                     <actions>
+                        <action behavior="Platform" id="0" name="Set ignoring input" sid="6528964013444054" type="Player">
+                            <param id="0" name="Input">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="7714826267038489" type="Stage_FadeOutScreen">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="8133703114206742" type="Stage_FadeOutScreen" />
+                        <action id="-16" name="Wait" sid="8807834231057348" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
                         <action id="-2" name="Go to layout" sid="9378724013476513" type="System">
                             <param id="0" name="Layout">7_WinState</param>
                         </action>

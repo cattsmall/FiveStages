@@ -51,6 +51,18 @@
                         <action behavior="ScrollTo" id="1" name="Set enabled" sid="8082369275521365" type="Player">
                             <param id="0" name="State">0</param>
                         </action>
+                        <action id="-10" name="Set value" sid="3321230282994289" type="Player">
+                            <param id="0" name="Instance variable">Quote1</param>
+                            <param id="1" name="Value">&quot;You jerk!&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6687082251364186" type="Player">
+                            <param id="0" name="Instance variable">Quote2</param>
+                            <param id="1" name="Value">&quot;Get out of my face!&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6755060486811691" type="Player">
+                            <param id="0" name="Instance variable">Quote3</param>
+                            <param id="1" name="Value">&quot;Fuck you &quot; &amp; EnemyName &amp; &quot;!&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="1731093288215963">
@@ -219,6 +231,7 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-9" name="Destroy" sid="2522779443992604" type="Enemy_Text" />
                         <action id="-16" name="Wait" sid="1947667672828154" type="System">
                             <param id="0" name="Seconds">1</param>
                         </action>

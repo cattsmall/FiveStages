@@ -3,6 +3,101 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>7_Events_WinState</name>
     <events>
-        <include>00_Main_Controls</include>
+        <event-block sid="1694890157443962">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4007409314446472" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="4004478469126743" type="Audio">
+                    <param id="0" name="Audio file">victory</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
+                </action>
+                <action id="-3" name="Set position" sid="1625447908305675" type="Stage_FadeInScreen">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">0</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="2296115962592005" type="Stage_FadeInScreen" />
+                <action id="-16" name="Wait" sid="1525581868912061" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Click to go to next question</comment>
+        <event-block sid="3488215552880667">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="5487613606538743" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Button_Continue</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="8446363671489382" type="Stage_FadeOutScreen">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">0</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="8056660940781088" type="Stage_FadeOutScreen" />
+                <action id="-16" name="Wait" sid="2040712626950584" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="1696643483505113" type="System">
+                    <param id="0" name="Layout">01_TitleScreen</param>
+                </action>
+                <action id="-9" name="Set value" sid="2439885117417639" type="System">
+                    <param id="0" name="Variable">PlayerName</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="777139145172936" type="System">
+                    <param id="0" name="Variable">EnemyName</param>
+                    <param id="1" name="Value">&quot;&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="219029004323198" type="System">
+                    <param id="0" name="Variable">DifficultyLevel</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="5892307700443752" type="System">
+                    <param id="0" name="Variable">FriendsHurt</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="939303117966153">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="3740073412626999" type="System">
+                    <param id="0" name="Variable">FriendsHurt</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="9045984667732437" type="Stage_Quote">
+                    <param id="0" name="Text">&quot;You recovered without hurting any friends.&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7638405759932536">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="964663683393376" type="System">
+                    <param id="0" name="Variable">FriendsHurt</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="2538538723519441" type="Stage_Quote">
+                    <param id="0" name="Text">&quot;Friends hurt during the breakup: &quot; &amp; FriendsHurt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4735144466174473">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="5897599185413248" type="System" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="9674007033079561" type="Audio" />
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

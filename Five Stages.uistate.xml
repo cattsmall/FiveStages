@@ -17,7 +17,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout>3_Stage_Bargaining</layout>
         <layout>4_Stage_Depression</layout>
         <layout>5_Stage_Acceptance</layout>
-        <layout>7_WinState</layout>
+        <layout active="1">7_WinState</layout>
         <layout>02_Questions_1</layout>
         <layout>04_Intermission</layout>
         <layout>03_Questions_2</layout>
@@ -26,7 +26,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event-sheet>6_Events_LoseState</event-sheet>
         <event-sheet>01_Events_TitleScreen</event-sheet>
         <event-sheet>2_Events_Anger</event-sheet>
-        <event-sheet active="1">3_Events_Bargaining</event-sheet>
+        <event-sheet>3_Events_Bargaining</event-sheet>
         <event-sheet>4_Events_Depression</event-sheet>
         <event-sheet>5_Events_Acceptance</event-sheet>
         <event-sheet>7_Events_WinState</event-sheet>

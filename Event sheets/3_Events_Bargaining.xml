@@ -15,8 +15,8 @@
                             <param id="0" name="Animation">&quot;3_Bargaining&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
-                        <action id="0" name="Play" sid="8785214388641302" type="Audio">
-                            <param id="0" name="Audio file">denial</param>
+                        <action id="0" name="Play" sid="8905073789441082" type="Audio">
+                            <param id="0" name="Audio file">bargaining</param>
                             <param id="2" name="Loop">1</param>
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
@@ -40,16 +40,18 @@
                             <param id="0" name="Instance variable">TrueHealth</param>
                             <param id="1" name="Value">1</param>
                         </action>
-                    </actions>
-                </event-block>
-                <event-block sid="1896994800279109">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="7648941527906807" type="PlayerBullet">
-                            <param id="0" name="Object">EnemyBoss</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="743106253325539" type="PlayerBullet" />
+                        <action id="-10" name="Set value" sid="2069940093702354" type="Player">
+                            <param id="0" name="Instance variable">Quote1</param>
+                            <param id="1" name="Value">&quot;Don&apos;t leave me, &quot; &amp; EnemyName &amp; &quot;!&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7631836385957105" type="Player">
+                            <param id="0" name="Instance variable">Quote2</param>
+                            <param id="1" name="Value">EnemyName &amp; &quot;, you&apos;re the best!&quot;</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="5382221314069906" type="Player">
+                            <param id="0" name="Instance variable">Quote3</param>
+                            <param id="1" name="Value">&quot;I&apos;m happy we&apos;re friends!&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <comment>Trade Health for Things</comment>
@@ -92,7 +94,7 @@
                 </event-block>
                 <event-block sid="7898224982172554">
                     <conditions>
-                        <condition id="-18" name="On created" sid="6298252605280811" type="PlayerBullet" />
+                        <condition id="-18" name="On created" sid="6298252605280811" type="Player_Text" />
                         <condition id="-7" name="Compare instance variable" sid="548540919917989" type="EnemyBoss">
                             <param id="0" name="Instance variable">EnemyScenario</param>
                             <param id="1" name="Comparison">0</param>
@@ -266,7 +268,7 @@
                                             <param id="2" name="Image point">0</param>
                                         </action>
                                         <action id="0" name="Set text" sid="9632367401061642" type="Enemy_Text">
-                                            <param id="0" name="Text">&quot;I don&apos;t even know why I tried.&quot;</param>
+                                            <param id="0" name="Text">&quot;I don&apos;t know why I tried.&quot;</param>
                                         </action>
                                         <action id="-5" name="Set width" sid="4103151779418701" type="Enemy_Text">
                                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
@@ -294,7 +296,7 @@
                                             <param id="2" name="Image point">3</param>
                                         </action>
                                         <action id="0" name="Set text" sid="584994080381843" type="Enemy_Text">
-                                            <param id="0" name="Text">&quot;You never fucking listen!&quot;</param>
+                                            <param id="0" name="Text">&quot;You never listen!&quot;</param>
                                         </action>
                                         <action id="-5" name="Set width" sid="973022327618431" type="Enemy_Text">
                                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
@@ -341,9 +343,6 @@
                                     <param id="0" name="Instance variable">Shooting_Enabled</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="-16" name="Wait" sid="3619443016483011" type="System">
-                                    <param id="0" name="Seconds">5</param>
-                                </action>
                                 <action id="-9" name="Destroy" sid="1609321275483743" type="Enemy_Text" />
                                 <action id="-13" name="Set boolean" sid="2058970504210087" type="Player">
                                     <param id="0" name="Instance variable">Shooting_Enabled</param>
@@ -374,7 +373,7 @@
                                             <param id="2" name="Image point">0</param>
                                         </action>
                                         <action id="0" name="Set text" sid="7999036928897652" type="Enemy_Text">
-                                            <param id="0" name="Text">&quot;I don&apos;t even know why I tried.&quot;</param>
+                                            <param id="0" name="Text">&quot;I don&apos;t know why I tried.&quot;</param>
                                         </action>
                                         <action id="-5" name="Set width" sid="5339888958079473" type="Enemy_Text">
                                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
@@ -402,7 +401,7 @@
                                             <param id="2" name="Image point">3</param>
                                         </action>
                                         <action id="0" name="Set text" sid="858643330875744" type="Enemy_Text">
-                                            <param id="0" name="Text">&quot;You never fucking listen!&quot;</param>
+                                            <param id="0" name="Text">&quot;You never listen!&quot;</param>
                                         </action>
                                         <action id="-5" name="Set width" sid="7089376098577548" type="Enemy_Text">
                                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
@@ -440,10 +439,10 @@
                                     <param id="1" name="Y">128</param>
                                 </action>
                                 <action id="0" name="Set text" sid="2934674490896329" type="Enemy_Text">
-                                    <param id="0" name="Text">&quot;Come closer&quot;</param>
+                                    <param id="0" name="Text">&quot;Come over here&quot;</param>
                                 </action>
                                 <action id="-5" name="Set width" sid="205705986104313" type="Enemy_Text">
-                                    <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
+                                    <param id="0" name="Width">len(Enemy_Text.Text)*18</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="806993180387355" type="System">
                                     <param id="0" name="Seconds">5</param>
@@ -474,7 +473,7 @@
                                             <param id="2" name="Image point">0</param>
                                         </action>
                                         <action id="0" name="Set text" sid="2506999910338534" type="Enemy_Text">
-                                            <param id="0" name="Text">&quot;I don&apos;t even know why I tried.&quot;</param>
+                                            <param id="0" name="Text">&quot;I don&apos;t know why I tried.&quot;</param>
                                         </action>
                                         <action id="-5" name="Set width" sid="654390082560638" type="Enemy_Text">
                                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
@@ -502,7 +501,7 @@
                                             <param id="2" name="Image point">3</param>
                                         </action>
                                         <action id="0" name="Set text" sid="6689587308707771" type="Enemy_Text">
-                                            <param id="0" name="Text">&quot;You never fucking listen!&quot;</param>
+                                            <param id="0" name="Text">&quot;You never listen!&quot;</param>
                                         </action>
                                         <action id="-5" name="Set width" sid="1888457592862503" type="Enemy_Text">
                                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
@@ -574,7 +573,7 @@
                                             <param id="2" name="Image point">0</param>
                                         </action>
                                         <action id="0" name="Set text" sid="2598619548509719" type="Enemy_Text">
-                                            <param id="0" name="Text">&quot;I don&apos;t even know why I tried.&quot;</param>
+                                            <param id="0" name="Text">&quot;I don&apos;t know why I tried.&quot;</param>
                                         </action>
                                         <action id="-5" name="Set width" sid="6097018243477272" type="Enemy_Text">
                                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
@@ -602,7 +601,7 @@
                                             <param id="2" name="Image point">3</param>
                                         </action>
                                         <action id="0" name="Set text" sid="3107023660463145" type="Enemy_Text">
-                                            <param id="0" name="Text">&quot;You never fucking listen!&quot;</param>
+                                            <param id="0" name="Text">&quot;You never listen!&quot;</param>
                                         </action>
                                         <action id="-5" name="Set width" sid="6386213369092892" type="Enemy_Text">
                                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
