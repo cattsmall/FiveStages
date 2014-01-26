@@ -968,6 +968,7 @@
                         <EnemySuccess>false</EnemySuccess>
                         <EnemyScenario>0</EnemyScenario>
                         <EnemyMissionText></EnemyMissionText>
+                        <PlayerJumpCount>0</PlayerJumpCount>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />

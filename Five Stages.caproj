@@ -174,6 +174,7 @@
                 <instance-variable name="EnemySuccess" sid="7444132165599011" type="boolean" />
                 <instance-variable name="EnemyScenario" sid="4976535621137231" type="number" />
                 <instance-variable name="EnemyMissionText" sid="4351611952129429" type="string" />
+                <instance-variable name="PlayerJumpCount" sid="97112141109594" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="2615820943550432">
