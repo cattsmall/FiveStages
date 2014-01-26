@@ -21,9 +21,82 @@
                             <param id="3" name="Volume">0</param>
                             <param id="1" name="Tag (optional)">&quot;bgm&quot;</param>
                         </action>
+                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="4075574751308186" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="7491932118634023" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9151658233631715">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="981562280362385" type="System" />
+                        <condition id="-2" name="Compare Y" sid="6775909073574764" type="Player_Scrollto_Offset">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Y co-ordinate">LayoutHeight +10000</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="7534664174729718" type="Player_Scrollto_Offset">
+                            <param id="0" name="Y">Player_Scrollto_Offset.Y+3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="798239172034056">
+                    <conditions>
+                        <condition id="-3" inverted="1" name="Is on-screen" sid="4441993460739096" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="5797988782856239" type="Player">
+                            <param id="0" name="Instance variable">PlayerHealth</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="3546104446603003">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="6883052949310678" type="Player_Scrollto_Offset">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Y co-ordinate">EnemyBoss.Y</param>
+                </condition>
+                <condition behavior="Platform" id="2" name="Is on floor" sid="1354803786482906" type="Player" />
+                <condition id="-3" name="Is on-screen" sid="3938552215317703" type="EnemyBoss" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="927380336271144" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="9989482698789965" type="Player">
+                    <param id="0" name="Input">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="8807442410593524" type="Player">
+                    <param id="0" name="Instance variable">Shooting_Enabled</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action behavior="8Direction" id="8" name="Set enabled" sid="9018219265821681" type="EnemyBoss">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="274137466889644" type="EnemyBoss">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="4775589651973442" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-3" name="Set position" sid="7416314122361306" type="Stage_FadeOutScreen">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">0</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="5602419915149529" type="Stage_FadeOutScreen" />
+                <action id="-16" name="Wait" sid="4651069179016041" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="3740266222314149" type="System">
+                    <param id="0" name="Layout">5_Stage_Acceptance</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

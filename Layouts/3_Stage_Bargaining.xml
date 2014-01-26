@@ -104,6 +104,7 @@
                         <PlayerHealth>1000</PlayerHealth>
                         <Shooting_Enabled>true</Shooting_Enabled>
                         <Double_Jump>false</Double_Jump>
+                        <PlayerSpeed>0</PlayerSpeed>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="ScrollTo">

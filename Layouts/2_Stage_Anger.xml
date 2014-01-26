@@ -806,12 +806,23 @@
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
+                        <collisions>Disabled</collisions>
                     </properties>
                     <behavior-instances>
                         <behavior-instance type="ScrollTo">
                             <properties>
                                 <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="8Direction">
+                            <properties>
+                                <max-speed>100</max-speed>
+                                <acceleration>300</acceleration>
+                                <deceleration>100000</deceleration>
+                                <directions>8 directions</directions>
+                                <set-angle>360 degree (smooth)</set-angle>
+                                <default-controls>No</default-controls>
+                                <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
@@ -947,6 +958,7 @@
                         <PlayerHealth>1000</PlayerHealth>
                         <Shooting_Enabled>true</Shooting_Enabled>
                         <Double_Jump>false</Double_Jump>
+                        <PlayerSpeed>0</PlayerSpeed>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="ScrollTo">

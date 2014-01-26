@@ -15,6 +15,90 @@
                             <param id="0" name="Animation">&quot;5_Acceptance&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
+                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="9571688519807283" type="Player">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9402173101226402">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="7369458208647433" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="3296334065540477" type="Player_Scrollto_Offset">
+                            <param id="0" name="X">Player.X+370</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8707168774678499">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="724712095992665" type="Player">
+                            <param id="0" name="Object">EnemyBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="8688991055624204" type="System">
+                            <param id="0" name="Layout">6_LoseState</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="8527364312832497" type="System">
+                            <param id="0" name="Variable">DifficultyLevel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="568132525180848">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="1660930584295472" type="PlayerBullet">
+                            <param id="0" name="Object">EnemyBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="9378724013476513" type="System">
+                            <param id="0" name="Layout">7_WinState</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6014149780349022">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="1682013801020506" type="EnemyBoss" />
+                        <condition id="-4" name="Trigger once while true" sid="1997132055114008" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="1805772748373304" type="Player">
+                            <param id="0" name="Instance variable">Shooting_Enabled</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="7161715407484258" type="EnemyBoss">
+                            <param id="0" name="Object">Enemy_Text</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="3701164019367707" type="Enemy_Text">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="2339623629517682" type="Enemy_Text">
+                            <param id="0" name="X">1900</param>
+                            <param id="1" name="Y">128</param>
+                        </action>
+                        <action id="0" name="Set text" sid="8498743752363068" type="Enemy_Text">
+                            <param id="0" name="Text">&quot;Will you come back to me?&quot;</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="6471941482272187" type="Enemy_Text">
+                            <param id="0" name="Width">len(Enemy_Text.Text)*18</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7381367249677456">
+                    <conditions>
+                        <condition id="-3" inverted="1" name="Is on-screen" sid="5464322066032736" type="EnemyBoss" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="4875078796622525" type="Player">
+                            <param id="0" name="Instance variable">Shooting_Enabled</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="7991763773889433" type="Enemy_Text" />
                     </actions>
                 </event-block>
             </sub-events>

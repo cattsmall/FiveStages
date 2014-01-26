@@ -215,10 +215,6 @@
                                     <param id="0" name="Instance variable">EnemySuccess</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="4925002418910365" type="EnemyBoss">
-                                    <param id="0" name="Instance variable">EnemyMissionText</param>
-                                    <param id="1" name="Value">&quot;Jump 5 times for me&quot;</param>
-                                </action>
                                 <action id="-10" name="Set value" sid="9396426406102959" type="EnemyBoss">
                                     <param id="0" name="Instance variable">PlayerJumpCount</param>
                                     <param id="1" name="Value">0</param>
@@ -236,7 +232,7 @@
                                     <param id="1" name="Y">128</param>
                                 </action>
                                 <action id="0" name="Set text" sid="2576520215967311" type="Enemy_Text">
-                                    <param id="0" name="Text">EnemyBoss.EnemyMissionText</param>
+                                    <param id="0" name="Text">&quot;Jump 5 times for me&quot;</param>
                                 </action>
                                 <action id="-5" name="Set width" sid="7173618750624143" type="Enemy_Text">
                                     <param id="0" name="Width">len(Enemy_Text.Text)*18</param>
@@ -323,10 +319,6 @@
                                     <param id="0" name="Instance variable">EnemySuccess</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="5536656917011206" type="EnemyBoss">
-                                    <param id="0" name="Instance variable">EnemyMissionText</param>
-                                    <param id="1" name="Value">&quot;Tell me something nice&quot;</param>
-                                </action>
                                 <action id="0" name="Spawn another object" sid="976556185736212" type="EnemyBoss">
                                     <param id="0" name="Object">Enemy_Text</param>
                                     <param id="1" name="Layer">0</param>
@@ -340,7 +332,7 @@
                                     <param id="1" name="Y">128</param>
                                 </action>
                                 <action id="0" name="Set text" sid="8131731104039819" type="Enemy_Text">
-                                    <param id="0" name="Text">EnemyBoss.EnemyMissionText</param>
+                                    <param id="0" name="Text">&quot;Tell me something nice&quot;</param>
                                 </action>
                                 <action id="-5" name="Set width" sid="6711334841182164" type="Enemy_Text">
                                     <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
@@ -435,10 +427,6 @@
                                     <param id="0" name="Instance variable">EnemySuccess</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="4879363290315306" type="EnemyBoss">
-                                    <param id="0" name="Instance variable">EnemyMissionText</param>
-                                    <param id="1" name="Value">&quot;Come closer&quot;</param>
-                                </action>
                                 <action id="0" name="Spawn another object" sid="1737538922364546" type="EnemyBoss">
                                     <param id="0" name="Object">Enemy_Text</param>
                                     <param id="1" name="Layer">0</param>
@@ -452,7 +440,7 @@
                                     <param id="1" name="Y">128</param>
                                 </action>
                                 <action id="0" name="Set text" sid="2934674490896329" type="Enemy_Text">
-                                    <param id="0" name="Text">EnemyBoss.EnemyMissionText</param>
+                                    <param id="0" name="Text">&quot;Come closer&quot;</param>
                                 </action>
                                 <action id="-5" name="Set width" sid="205705986104313" type="Enemy_Text">
                                     <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
@@ -539,10 +527,6 @@
                                     <param id="0" name="Instance variable">EnemySuccess</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="4729446900018572" type="EnemyBoss">
-                                    <param id="0" name="Instance variable">EnemyMissionText</param>
-                                    <param id="1" name="Value">&quot;Stay right there&quot;</param>
-                                </action>
                                 <action id="0" name="Spawn another object" sid="2901181390240282" type="EnemyBoss">
                                     <param id="0" name="Object">Enemy_Text</param>
                                     <param id="1" name="Layer">0</param>
@@ -556,7 +540,7 @@
                                     <param id="1" name="Y">128</param>
                                 </action>
                                 <action id="0" name="Set text" sid="5717122128055134" type="Enemy_Text">
-                                    <param id="0" name="Text">EnemyBoss.EnemyMissionText</param>
+                                    <param id="0" name="Text">&quot;Stay right there&quot;</param>
                                 </action>
                                 <action id="-5" name="Set width" sid="7957254424080688" type="Enemy_Text">
                                     <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
@@ -641,6 +625,7 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-9" name="Destroy" sid="5952574750566416" type="Enemy_Text" />
                         <action id="-16" name="Wait" sid="3737140782405095" type="System">
                             <param id="0" name="Seconds">1</param>
                         </action>
