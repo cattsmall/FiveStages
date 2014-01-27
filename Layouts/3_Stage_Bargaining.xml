@@ -82,13 +82,13 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>513</x>
-                        <y>647</y>
+                        <y>624</y>
                         <z>0</z>
                         <width>1084</width>
-                        <height>48</height>
+                        <height>64</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>-1.604166627</hotspotY>
+                        <hotspotY>-1.609375</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -103,6 +103,7 @@
                     <instance-variables>
                         <PlayerHealth>1500</PlayerHealth>
                         <Shooting_Enabled>true</Shooting_Enabled>
+                        <Is_Shooting>false</Is_Shooting>
                         <Double_Jump>false</Double_Jump>
                         <Quote1></Quote1>
                         <Quote2></Quote2>
@@ -119,7 +120,7 @@
                                 <max-speed>500</max-speed>
                                 <acceleration>800</acceleration>
                                 <deceleration>100000</deceleration>
-                                <jump-strength>1000</jump-strength>
+                                <jump-strength>1200</jump-strength>
                                 <gravity>3000</gravity>
                                 <max-fall-speed>1500</max-fall-speed>
                                 <default-controls>Yes</default-controls>
@@ -133,11 +134,11 @@
                         <x>185</x>
                         <y>635</y>
                         <z>0</z>
-                        <width>109.262298584</width>
-                        <height>181.058822632</height>
+                        <width>90</width>
+                        <height>180</height>
                         <depth>0</depth>
-                        <hotspotX>0.50967741</hotspotX>
-                        <hotspotY>0.500974655</hotspotY>
+                        <hotspotX>0.5078125</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -182,13 +183,13 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>794</x>
-                        <y>376</y>
+                        <y>130</y>
                         <z>0</z>
-                        <width>388</width>
-                        <height>453</height>
+                        <width>330</width>
+                        <height>660</height>
                         <depth>0</depth>
-                        <hotspotX>0.432989687</hotspotX>
-                        <hotspotY>0.233995587</hotspotY>
+                        <hotspotX>0.51953125</hotspotX>
+                        <hotspotY>0.098632813</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -285,13 +286,13 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>512.5</x>
-                        <y>122.99987793</y>
+                        <y>145</y>
                         <z>0</z>
-                        <width>1047</width>
-                        <height>48</height>
+                        <width>2144.256103516</width>
+                        <height>64</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>-1.604166627</hotspotY>
+                        <hotspotY>-1.609375</hotspotY>
                         <angle>3.141592741</angle>
                         <opacity>1</opacity>
                     </world>
@@ -313,14 +314,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>21</x>
-                        <y>394</y>
+                        <x>0</x>
+                        <y>0</y>
                         <z>0</z>
                         <width>48</width>
-                        <height>771</height>
+                        <height>768</height>
                         <depth>0</depth>
-                        <hotspotX>0.520833313</hotspotX>
-                        <hotspotY>0.512000024</hotspotY>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -446,11 +447,11 @@
                         <x>680.348327637</x>
                         <y>78.050003052</y>
                         <z>0</z>
-                        <width>27</width>
-                        <height>26</height>
+                        <width>27.504673004</width>
+                        <height>20.75</height>
                         <depth>0</depth>
-                        <hotspotX>0.504672885</hotspotX>
-                        <hotspotY>0.471153855</hotspotY>
+                        <hotspotX>0.504587173</hotspotX>
+                        <hotspotY>0.602409661</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -526,7 +527,7 @@
                 </instance>
                 <instance type="Stage_Quote" uid="97">
                     <properties>
-                        <text>&quot;I&apos;ll do anything to be with you. Can we still be friends?&quot;</text>
+                        <text>Disobey.</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Georgia,-48,400,1</font>
                         <color>204,204,255</color>
@@ -624,44 +625,6 @@
                         <z>0</z>
                         <width>1024</width>
                         <height>768</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Stage_Instructions" uid="91">
-                    <properties>
-                        <text>Move and jump using arrow keys. Shoot on command using spacebar.</text>
-                        <initial-visibility>Visible</initial-visibility>
-                        <font>Georgia,-24,400,0</font>
-                        <color>153,153,153</color>
-                        <horizontal-alignment>Center</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
-                        <wrapping>Word</wrapping>
-                        <line-height>0</line-height>
-                    </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Fade">
-                            <properties>
-                                <active-at-start>No</active-at-start>
-                                <fade-in-time>0</fade-in-time>
-                                <wait-time>0</wait-time>
-                                <fade-out-time>1</fade-out-time>
-                                <destroy>After fade out</destroy>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>-49</x>
-                        <y>-653</y>
-                        <z>0</z>
-                        <width>814</width>
-                        <height>63</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
