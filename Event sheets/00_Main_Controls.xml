@@ -256,6 +256,21 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Fall through platform</comment>
+                <event-block sid="1846592419251515">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="8247308392164375" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="12" name="Fall through" sid="9178136171649835" type="Player" />
+                        <action id="4" name="Set animation" sid="4688987984588991" type="Player">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>Shooting</comment>
                 <event-block sid="1695185182906098">
                     <conditions>
@@ -278,24 +293,6 @@
                         </action>
                         <action id="-5" name="Set width" sid="721091309724154" type="Player_Text">
                             <param id="0" name="Width">len(Player_Text.Text)*14</param>
-                        </action>
-                        <action id="7" name="Play (by name)" sid="1641697265483277" type="Audio">
-                            <param id="0" name="Folder">0</param>
-                            <param id="1" name="Audio file name">choose(&quot;Fire Attack 1&quot;, &quot;Fire Attack 2&quot;, &quot;Fire Attack 3&quot;)</param>
-                            <param id="3" name="Loop">0</param>
-                            <param id="4" name="Volume">0</param>
-                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                        <action id="-13" name="Set boolean" sid="258484319503573" type="Player">
-                            <param id="0" name="Instance variable">Is_Shooting</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="1436090702402348" type="System">
-                            <param id="0" name="Seconds">0.5</param>
-                        </action>
-                        <action id="-13" name="Set boolean" sid="6101045115914628" type="Player">
-                            <param id="0" name="Instance variable">Is_Shooting</param>
-                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -324,24 +321,6 @@
                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="1908458178531442" type="Player_Text">
                             <param id="0" name="Angle">180</param>
                         </action>
-                        <action id="7" name="Play (by name)" sid="6020947074627613" type="Audio">
-                            <param id="0" name="Folder">0</param>
-                            <param id="1" name="Audio file name">choose(&quot;Fire Attack 1&quot;, &quot;Fire Attack 2&quot;, &quot;Fire Attack 3&quot;)</param>
-                            <param id="3" name="Loop">0</param>
-                            <param id="4" name="Volume">0</param>
-                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                        <action id="-13" name="Set boolean" sid="3421341083694766" type="Player">
-                            <param id="0" name="Instance variable">Is_Shooting</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="-16" name="Wait" sid="348917662410693" type="System">
-                            <param id="0" name="Seconds">0.5</param>
-                        </action>
-                        <action id="-13" name="Set boolean" sid="8944216944583251" type="Player">
-                            <param id="0" name="Instance variable">Is_Shooting</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="987899778160841">
@@ -358,12 +337,33 @@
                             <param id="0" name="Animation">&quot;Fire&quot;</param>
                             <param id="1" name="From">1</param>
                         </action>
-                        <action id="-16" name="Wait" sid="6944552584479186" type="System">
-                            <param id="0" name="Seconds">1.0</param>
+                        <action id="7" name="Play (by name)" sid="2826869735344449" type="Audio">
+                            <param id="0" name="Folder">0</param>
+                            <param id="1" name="Audio file name">choose(&quot;Fire Attack 1&quot;, &quot;Fire Attack 2&quot;, &quot;Fire Attack 3&quot;)</param>
+                            <param id="3" name="Loop">0</param>
+                            <param id="4" name="Volume">0</param>
+                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
                         </action>
-                        <action id="4" name="Set animation" sid="9769689428827786" type="Player">
-                            <param id="0" name="Animation">&quot;Default&quot;</param>
-                            <param id="1" name="From">1</param>
+                        <action id="-13" name="Set boolean" sid="482242843727469" type="Player">
+                            <param id="0" name="Instance variable">Is_Shooting</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="4289608356539466" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="9296434504529939" type="Player">
+                            <param id="0" name="Instance variable">Is_Shooting</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4463343531500743">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="9909529586409652" type="Player_Text" />
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Move to layer" sid="2126109790895643" type="Player_Text">
+                            <param id="0" name="Layer">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -442,15 +442,6 @@
                             <param id="0" name="Instance variable">PlayerHealth</param>
                             <param id="1" name="Value">Enemy_Text.EnemyStrength</param>
                         </action>
-                    </actions>
-                </event-block>
-                <event-block sid="4146481306913151">
-                    <conditions>
-                        <condition id="0" name="On collision with another object" sid="3051900190057497" type="Player">
-                            <param id="0" name="Object">Enemy_Text</param>
-                        </condition>
-                    </conditions>
-                    <actions>
                         <action behavior="ScrollTo" id="0" name="Shake" sid="5731252045588897" type="Player">
                             <param id="0" name="Magnitude">100</param>
                             <param id="1" name="Duration">0.5</param>
@@ -462,10 +453,6 @@
                             <param id="3" name="Loop">0</param>
                             <param id="4" name="Volume">0</param>
                             <param id="2" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                        <action id="-12" name="Subtract from" sid="5548253283904536" type="Player">
-                            <param id="0" name="Instance variable">PlayerHealth</param>
-                            <param id="1" name="Value">50</param>
                         </action>
                     </actions>
                 </event-block>
@@ -651,11 +638,17 @@
                         </action>
                         <action id="-10" name="Set value" sid="2925880379661918" type="Enemy_Text">
                             <param id="0" name="Instance variable">EnemyStrength</param>
-                            <param id="1" name="Value">100 * DifficultyLevel</param>
+                            <param id="1" name="Value">150 * DifficultyLevel</param>
                         </action>
                         <action id="4" name="Set animation" sid="5604212518289802" type="EnemyBoss">
                             <param id="0" name="Animation">&quot;Fire&quot;</param>
                             <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-26" name="Move to layer" sid="8151892545111809" type="Enemy_Text">
+                            <param id="0" name="Layer">1</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="2395951153405202" type="Enemy_Text">
+                            <param id="0" name="Height">35</param>
                         </action>
                         <action id="-16" name="Wait" sid="476553024816995" type="System">
                             <param id="0" name="Seconds">1.0</param>

@@ -42,11 +42,11 @@
                         </action>
                         <action id="-10" name="Set value" sid="2069940093702354" type="Player">
                             <param id="0" name="Instance variable">Quote1</param>
-                            <param id="1" name="Value">&quot;Don&apos;t leave me, &quot; &amp; EnemyName &amp; &quot;!&quot;</param>
+                            <param id="1" name="Value">&quot;Don&apos;t leave me!&quot;</param>
                         </action>
                         <action id="-10" name="Set value" sid="7631836385957105" type="Player">
                             <param id="0" name="Instance variable">Quote2</param>
-                            <param id="1" name="Value">EnemyName &amp; &quot;, you&apos;re the best!&quot;</param>
+                            <param id="1" name="Value">&quot;Thank you &quot; &amp; EnemyName &amp; &quot;!&quot;</param>
                         </action>
                         <action id="-10" name="Set value" sid="5382221314069906" type="Player">
                             <param id="0" name="Instance variable">Quote3</param>
@@ -80,7 +80,7 @@
                                 <condition id="-7" name="Compare instance variable" sid="8023798305399292" type="EnemyBoss">
                                     <param id="0" name="Instance variable">PlayerJumpCount</param>
                                     <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">10</param>
+                                    <param id="2" name="Value">5</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -144,6 +144,14 @@
                         <condition id="-2" name="On start of layout" sid="6840783876925961" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-13" name="Set boolean" sid="5965475986146592" type="EnemyBoss">
+                            <param id="0" name="Instance variable">EnemyMission</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="5039653412755322" type="EnemyBoss">
+                            <param id="0" name="Instance variable">EnemySuccess</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
                         <action id="-10" name="Set value" sid="7417100254808365" type="EnemyBoss">
                             <param id="0" name="Instance variable">EnemyHealth</param>
                             <param id="1" name="Value">500</param>
@@ -152,244 +160,286 @@
                             <param id="0" name="Instance variable">Can_Die</param>
                             <param id="1" name="Value">0</param>
                         </action>
+                        <action id="-9" name="Destroy" sid="2716268231208815" type="Enemy_Text" />
+                        <action id="0" name="Spawn another object" sid="1308512447233956" type="EnemyBoss">
+                            <param id="0" name="Object">Enemy_Text</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="6636625110539063" type="Enemy_Text">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="7708489288748982" type="Enemy_Text">
+                            <param id="0" name="X">256</param>
+                            <param id="1" name="Y">128</param>
+                        </action>
+                        <action id="0" name="Set text" sid="4559828059003136" type="Enemy_Text">
+                            <param id="0" name="Text">&quot;Do exactly as I say, okay?&quot;</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="8008061034484641" type="Enemy_Text">
+                            <param id="0" name="Width">len(Enemy_Text.Text)*18</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="281596896579636" type="System">
+                            <param id="0" name="Seconds">5</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="4760265887713617" type="Enemy_Text" />
+                        <action id="-13" name="Set boolean" sid="437368914972659" type="EnemyBoss">
+                            <param id="0" name="Instance variable">EnemyMission</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                     </actions>
                 </event-block>
-                <event-block any="1" sid="253420827113496">
+                <event-block sid="1675219093402763">
                     <conditions>
-                        <condition id="-2" name="On start of layout" sid="8882201252528201" type="System" />
-                        <condition id="-6" name="Every X seconds" sid="678376209607143" type="System">
+                        <condition id="-6" name="Every X seconds" sid="6060558762904359" type="System">
                             <param id="0" name="Interval (seconds)">10</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="511645431445775" type="EnemyBoss">
+                            <param id="0" name="Instance variable">EnemyMission</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-10" name="Set value" sid="9409191842491215" type="EnemyBoss">
+                        <action id="-10" name="Set value" sid="7970992526422536" type="EnemyBoss">
                             <param id="0" name="Instance variable">EnemyScenario</param>
-                            <param id="1" name="Value">floor(random(2))</param>
+                            <param id="1" name="Value">round(random(2))</param>
                         </action>
+                        <action id="-9" name="Destroy" sid="7434985748565954" type="Enemy_Text" />
                     </actions>
                     <sub-events>
-                        <event-block sid="7633216642647646">
+                        <event-block sid="2124479199761801">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="5601702083456472" type="EnemyBoss">
+                                <condition id="-7" name="Compare instance variable" sid="6501071309110748" type="EnemyBoss">
                                     <param id="0" name="Instance variable">EnemyScenario</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-13" name="Set boolean" sid="8763273032373763" type="EnemyBoss">
+                                <action id="-13" name="Set boolean" sid="7703609588586019" type="EnemyBoss">
                                     <param id="0" name="Instance variable">EnemySuccess</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-10" name="Set value" sid="9396426406102959" type="EnemyBoss">
+                                <action id="-10" name="Set value" sid="4394731098673419" type="EnemyBoss">
                                     <param id="0" name="Instance variable">PlayerJumpCount</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="0" name="Spawn another object" sid="8870064928246638" type="EnemyBoss">
+                                <action id="0" name="Spawn another object" sid="5870950520017066" type="EnemyBoss">
                                     <param id="0" name="Object">Enemy_Text</param>
                                     <param id="1" name="Layer">0</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
-                                <action behavior="Bullet" id="5" name="Set enabled" sid="7226829799130223" type="Enemy_Text">
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="8842163525892667" type="Enemy_Text">
                                     <param id="0" name="State">0</param>
                                 </action>
-                                <action id="-3" name="Set position" sid="2777762709858966" type="Enemy_Text">
+                                <action id="-3" name="Set position" sid="2679393435975672" type="Enemy_Text">
                                     <param id="0" name="X">256</param>
                                     <param id="1" name="Y">128</param>
                                 </action>
-                                <action id="0" name="Set text" sid="2576520215967311" type="Enemy_Text">
-                                    <param id="0" name="Text">&quot;Jump 10 times&quot;</param>
+                                <action id="0" name="Set text" sid="3634740218937984" type="Enemy_Text">
+                                    <param id="0" name="Text">&quot;Jump 5 times&quot;</param>
                                 </action>
-                                <action id="-5" name="Set width" sid="7173618750624143" type="Enemy_Text">
+                                <action id="-5" name="Set width" sid="4482339872877549" type="Enemy_Text">
                                     <param id="0" name="Width">len(Enemy_Text.Text)*18</param>
                                 </action>
-                                <action id="-16" name="Wait" sid="6364015511378625" type="System">
+                                <action id="-16" name="Wait" sid="6530806999854013" type="System">
                                     <param id="0" name="Seconds">5</param>
                                 </action>
-                                <action id="-9" name="Destroy" sid="1799288920304086" type="Enemy_Text" />
+                                <action id="-9" name="Destroy" sid="3206117558068293" type="Enemy_Text" />
                             </actions>
                             <sub-events>
-                                <event-block sid="5397668185702421">
+                                <event-block sid="2227529885588497">
                                     <conditions>
-                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="6968345597624116" type="EnemyBoss">
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="8488650244454984" type="EnemyBoss">
                                             <param id="0" name="Instance variable">EnemySuccess</param>
                                         </condition>
-                                        <condition id="-4" name="Trigger once while true" sid="4579142977779119" type="System" />
+                                        <condition id="-4" name="Trigger once while true" sid="1380401801620892" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-12" name="Subtract from" sid="3841506667855308" type="EnemyBoss">
+                                        <action id="-10" name="Set value" sid="4394877537541815" type="EnemyBoss">
+                                            <param id="0" name="Instance variable">EnemyScenario</param>
+                                            <param id="1" name="Value">4</param>
+                                        </action>
+                                        <action id="-12" name="Subtract from" sid="1240062281808141" type="EnemyBoss">
                                             <param id="0" name="Instance variable">EnemyHealth</param>
                                             <param id="1" name="Value">100</param>
                                         </action>
-                                        <action behavior="Flash" id="0" name="Flash" sid="1784429959953259" type="EnemyBoss">
+                                        <action behavior="Flash" id="0" name="Flash" sid="8130063211930757" type="EnemyBoss">
                                             <param id="0" name="&apos;On&apos; time">0.05</param>
                                             <param id="1" name="&apos;Off&apos; time">0.05</param>
                                             <param id="2" name="Duration">0.75</param>
                                         </action>
-                                        <action id="0" name="Spawn another object" sid="2728274376166877" type="EnemyBoss">
+                                        <action id="0" name="Spawn another object" sid="9186627205912746" type="EnemyBoss">
                                             <param id="0" name="Object">Enemy_Text</param>
                                             <param id="1" name="Layer">0</param>
                                             <param id="2" name="Image point">3</param>
                                         </action>
-                                        <action id="0" name="Set text" sid="584994080381843" type="Enemy_Text">
+                                        <action id="0" name="Set text" sid="7818559043194059" type="Enemy_Text">
                                             <param id="0" name="Text">&quot;You never listen!&quot;</param>
                                         </action>
-                                        <action id="-5" name="Set width" sid="973022327618431" type="Enemy_Text">
+                                        <action id="-5" name="Set width" sid="215061382655598" type="Enemy_Text">
                                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
                                         </action>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="3224484694676893" type="Enemy_Text">
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="916664999507929" type="Enemy_Text">
                                             <param id="0" name="Angle">180</param>
                                         </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="3943195388559687">
+                        <event-block sid="8487269168463082">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="4782200237899118" type="EnemyBoss">
+                                <condition id="-7" name="Compare instance variable" sid="3961308500956367" type="EnemyBoss">
                                     <param id="0" name="Instance variable">EnemyScenario</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-13" name="Set boolean" sid="9670043710517301" type="EnemyBoss">
+                                <action id="-13" name="Set boolean" sid="9187908890198349" type="EnemyBoss">
                                     <param id="0" name="Instance variable">EnemySuccess</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="0" name="Spawn another object" sid="976556185736212" type="EnemyBoss">
+                                <action id="0" name="Spawn another object" sid="4849476305862086" type="EnemyBoss">
                                     <param id="0" name="Object">Enemy_Text</param>
                                     <param id="1" name="Layer">0</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
-                                <action behavior="Bullet" id="5" name="Set enabled" sid="1012397693242065" type="Enemy_Text">
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="5549720840619044" type="Enemy_Text">
                                     <param id="0" name="State">0</param>
                                 </action>
-                                <action id="-3" name="Set position" sid="7698246509163505" type="Enemy_Text">
+                                <action id="-3" name="Set position" sid="3131831304015426" type="Enemy_Text">
                                     <param id="0" name="X">256</param>
                                     <param id="1" name="Y">128</param>
                                 </action>
-                                <action id="0" name="Set text" sid="8131731104039819" type="Enemy_Text">
+                                <action id="0" name="Set text" sid="4913879290529394" type="Enemy_Text">
                                     <param id="0" name="Text">&quot;Say something&quot;</param>
                                 </action>
-                                <action id="-5" name="Set width" sid="6711334841182164" type="Enemy_Text">
+                                <action id="-5" name="Set width" sid="8438025827548461" type="Enemy_Text">
                                     <param id="0" name="Width">len(Enemy_Text.Text)*18</param>
                                 </action>
-                                <action id="-13" name="Set boolean" sid="9901665701599483" type="Player">
+                                <action id="-13" name="Set boolean" sid="4760581809064222" type="Player">
                                     <param id="0" name="Instance variable">Shooting_Enabled</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="-16" name="Wait" sid="389119454447348" type="System">
+                                <action id="-16" name="Wait" sid="3991982519255991" type="System">
                                     <param id="0" name="Seconds">5</param>
                                 </action>
-                                <action id="-9" name="Destroy" sid="1609321275483743" type="Enemy_Text" />
-                                <action id="-13" name="Set boolean" sid="2058970504210087" type="Player">
+                                <action id="-9" name="Destroy" sid="2307570380876496" type="Enemy_Text" />
+                                <action id="-13" name="Set boolean" sid="260045714235617" type="Player">
                                     <param id="0" name="Instance variable">Shooting_Enabled</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="8578355843400697">
+                                <event-block sid="441346143322152">
                                     <conditions>
-                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1091736554827756" type="EnemyBoss">
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="1977823775467583" type="EnemyBoss">
                                             <param id="0" name="Instance variable">EnemySuccess</param>
                                         </condition>
-                                        <condition id="-4" name="Trigger once while true" sid="2203810494132532" type="System" />
+                                        <condition id="-4" name="Trigger once while true" sid="9868302706384227" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-12" name="Subtract from" sid="2403917578114155" type="EnemyBoss">
+                                        <action id="-10" name="Set value" sid="8006297858941235" type="EnemyBoss">
+                                            <param id="0" name="Instance variable">EnemyScenario</param>
+                                            <param id="1" name="Value">4</param>
+                                        </action>
+                                        <action id="-12" name="Subtract from" sid="4799952917133427" type="EnemyBoss">
                                             <param id="0" name="Instance variable">EnemyHealth</param>
                                             <param id="1" name="Value">100</param>
                                         </action>
-                                        <action behavior="Flash" id="0" name="Flash" sid="9936908312335757" type="EnemyBoss">
+                                        <action behavior="Flash" id="0" name="Flash" sid="8333259118166143" type="EnemyBoss">
                                             <param id="0" name="&apos;On&apos; time">0.05</param>
                                             <param id="1" name="&apos;Off&apos; time">0.05</param>
                                             <param id="2" name="Duration">0.75</param>
                                         </action>
-                                        <action id="0" name="Spawn another object" sid="5220702972375981" type="EnemyBoss">
+                                        <action id="0" name="Spawn another object" sid="8959070051789505" type="EnemyBoss">
                                             <param id="0" name="Object">Enemy_Text</param>
                                             <param id="1" name="Layer">0</param>
                                             <param id="2" name="Image point">3</param>
                                         </action>
-                                        <action id="0" name="Set text" sid="858643330875744" type="Enemy_Text">
+                                        <action id="0" name="Set text" sid="9146801743658669" type="Enemy_Text">
                                             <param id="0" name="Text">&quot;You never listen!&quot;</param>
                                         </action>
-                                        <action id="-5" name="Set width" sid="7089376098577548" type="Enemy_Text">
+                                        <action id="-5" name="Set width" sid="5356377259758816" type="Enemy_Text">
                                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
                                         </action>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="299530567366924" type="Enemy_Text">
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="9708275561583735" type="Enemy_Text">
                                             <param id="0" name="Angle">180</param>
                                         </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
-                        <event-block sid="4004440334001079">
+                        <event-block sid="2716815800566651">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="862352406418195" type="EnemyBoss">
+                                <condition id="-7" name="Compare instance variable" sid="3082877098885541" type="EnemyBoss">
                                     <param id="0" name="Instance variable">EnemyScenario</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">2</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-13" name="Set boolean" sid="328677267676416" type="EnemyBoss">
+                                <action id="-13" name="Set boolean" sid="5813490126733923" type="EnemyBoss">
                                     <param id="0" name="Instance variable">EnemySuccess</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="0" name="Spawn another object" sid="1737538922364546" type="EnemyBoss">
+                                <action id="0" name="Spawn another object" sid="8997488454735231" type="EnemyBoss">
                                     <param id="0" name="Object">Enemy_Text</param>
                                     <param id="1" name="Layer">0</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
-                                <action behavior="Bullet" id="5" name="Set enabled" sid="4336880337978645" type="Enemy_Text">
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="2539706266905237" type="Enemy_Text">
                                     <param id="0" name="State">0</param>
                                 </action>
-                                <action id="-3" name="Set position" sid="6200955140172339" type="Enemy_Text">
+                                <action id="-3" name="Set position" sid="7504433002884988" type="Enemy_Text">
                                     <param id="0" name="X">256</param>
                                     <param id="1" name="Y">128</param>
                                 </action>
-                                <action id="0" name="Set text" sid="2934674490896329" type="Enemy_Text">
+                                <action id="0" name="Set text" sid="4388971437181185" type="Enemy_Text">
                                     <param id="0" name="Text">&quot;Come over here&quot;</param>
                                 </action>
-                                <action id="-5" name="Set width" sid="205705986104313" type="Enemy_Text">
+                                <action id="-5" name="Set width" sid="8748655903223869" type="Enemy_Text">
                                     <param id="0" name="Width">len(Enemy_Text.Text)*18</param>
                                 </action>
-                                <action id="-16" name="Wait" sid="806993180387355" type="System">
+                                <action id="-16" name="Wait" sid="5331814336680957" type="System">
                                     <param id="0" name="Seconds">5</param>
                                 </action>
-                                <action id="-9" name="Destroy" sid="9744537461405165" type="Enemy_Text" />
+                                <action id="-9" name="Destroy" sid="5728225882689278" type="Enemy_Text" />
                             </actions>
                             <sub-events>
-                                <event-block sid="5333803144188617">
+                                <event-block sid="6152310838867216">
                                     <conditions>
-                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="5461814588744283" type="EnemyBoss">
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="5855044361172633" type="EnemyBoss">
                                             <param id="0" name="Instance variable">EnemySuccess</param>
                                         </condition>
-                                        <condition id="-4" name="Trigger once while true" sid="7754349878309304" type="System" />
+                                        <condition id="-4" name="Trigger once while true" sid="6409399593949378" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-12" name="Subtract from" sid="491349734758702" type="EnemyBoss">
+                                        <action id="-10" name="Set value" sid="6844410837750157" type="EnemyBoss">
+                                            <param id="0" name="Instance variable">EnemyScenario</param>
+                                            <param id="1" name="Value">4</param>
+                                        </action>
+                                        <action id="-12" name="Subtract from" sid="136071669786606" type="EnemyBoss">
                                             <param id="0" name="Instance variable">EnemyHealth</param>
                                             <param id="1" name="Value">100</param>
                                         </action>
-                                        <action behavior="Flash" id="0" name="Flash" sid="2467031219987471" type="EnemyBoss">
+                                        <action behavior="Flash" id="0" name="Flash" sid="2690430402994621" type="EnemyBoss">
                                             <param id="0" name="&apos;On&apos; time">0.05</param>
                                             <param id="1" name="&apos;Off&apos; time">0.05</param>
                                             <param id="2" name="Duration">0.75</param>
                                         </action>
-                                        <action id="0" name="Spawn another object" sid="8472519324320583" type="EnemyBoss">
+                                        <action id="0" name="Spawn another object" sid="3803501367133411" type="EnemyBoss">
                                             <param id="0" name="Object">Enemy_Text</param>
                                             <param id="1" name="Layer">0</param>
                                             <param id="2" name="Image point">3</param>
                                         </action>
-                                        <action id="0" name="Set text" sid="6689587308707771" type="Enemy_Text">
+                                        <action id="0" name="Set text" sid="9780299176984392" type="Enemy_Text">
                                             <param id="0" name="Text">&quot;You never listen!&quot;</param>
                                         </action>
-                                        <action id="-5" name="Set width" sid="1888457592862503" type="Enemy_Text">
+                                        <action id="-5" name="Set width" sid="482662579869646" type="Enemy_Text">
                                             <param id="0" name="Width">len(Enemy_Text.Text)*14</param>
                                         </action>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="4692999034965567" type="Enemy_Text">
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="6445508844663671" type="Enemy_Text">
                                             <param id="0" name="Angle">180</param>
                                         </action>
                                     </actions>
@@ -397,6 +447,43 @@
                             </sub-events>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="9953048114865001">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="5957700362658308" type="EnemyBoss">
+                            <param id="0" name="Instance variable">EnemySuccess</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="6620302666963285" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="5211000442681717" type="EnemyBoss">
+                            <param id="0" name="Instance variable">EnemyScenario</param>
+                            <param id="1" name="Value">4</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="6324231270558334" type="Enemy_Text" />
+                        <action id="0" name="Spawn another object" sid="1787602076355177" type="EnemyBoss">
+                            <param id="0" name="Object">Enemy_Text</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="507984457925724" type="Enemy_Text">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="3816311242001449" type="Enemy_Text">
+                            <param id="0" name="X">128</param>
+                            <param id="1" name="Y">128</param>
+                        </action>
+                        <action id="0" name="Set text" sid="9043182551237877" type="Enemy_Text">
+                            <param id="0" name="Text">&quot;Yes, do exactly what I want you to do!&quot;</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="1022911241534043" type="Enemy_Text">
+                            <param id="0" name="Width">len(Enemy_Text.Text)*18</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="2955279419459171" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="2013550826700178" type="Enemy_Text" />
+                    </actions>
                 </event-block>
                 <event-block sid="113174061561865">
                     <conditions>

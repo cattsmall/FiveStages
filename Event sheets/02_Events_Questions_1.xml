@@ -6,7 +6,62 @@
         <variable constant="0" name="PlayerName" sid="5619856171997946" static="0" type="text"></variable>
         <event-group description="" sid="1318188168090836" title="Question 1 Events">
             <sub-events>
+                <event-block sid="7257758938770864">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="5061749637041672" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set CSS style" sid="9985332320800713" type="Name_TextBox">
+                            <param id="0" name="Property name">&quot;font-size&quot;</param>
+                            <param id="1" name="Value">&quot;20px&quot;</param>
+                        </action>
+                        <action id="7" name="Set CSS style" sid="8744090556152624" type="Name_TextBox">
+                            <param id="0" name="Property name">&quot;padding-left&quot;</param>
+                            <param id="1" name="Value">&quot;10px&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Back to title screen</comment>
+                <event-block sid="4023109907128219">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="9575231589799237" type="Keyboard">
+                            <param id="0" name="Key">27 (Esc)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="6094936588006021" type="System">
+                            <param id="0" name="Layout">01_TitleScreen</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="8187953215311743" type="System">
+                            <param id="0" name="Variable">PlayerName</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="903847048598277" type="System">
+                            <param id="0" name="Variable">EnemyName</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="3376908159944283" type="System">
+                            <param id="0" name="Variable">DifficultyLevel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="6161672742439999" type="System">
+                            <param id="0" name="Variable">FriendsHurt</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>Set Player&apos;s Name</comment>
+                <event-block sid="102524598159738">
+                    <conditions>
+                        <condition id="2" name="On clicked" sid="4140382725382036" type="Name_TextBox" />
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="3913766080657269" type="Name_TextBox">
+                            <param id="0" name="Instance variable">Is_Focused</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="270581092655652">
                     <conditions>
                         <condition id="1" name="On text changed" sid="3796902044481376" type="Name_TextBox" />
@@ -29,6 +84,25 @@
                     </conditions>
                     <actions>
                         <action id="-2" name="Go to layout" sid="4831569700160374" type="System">
+                            <param id="0" name="Layout">03_Questions_2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3450618961768797">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="1903358200607313" type="Keyboard">
+                            <param id="0" name="Key">13 (Return)</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="6118702652415391" type="Name_TextBox">
+                            <param id="0" name="Instance variable">Is_Focused</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="8489687144059865" type="Name_TextBox">
+                            <param id="0" name="Instance variable">Is_Focused</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="1245691389282096" type="System">
                             <param id="0" name="Layout">03_Questions_2</param>
                         </action>
                     </actions>

@@ -26,11 +26,11 @@
                         </action>
                         <action id="-10" name="Set value" sid="4159495167692453" type="Player">
                             <param id="0" name="Instance variable">Quote1</param>
-                            <param id="1" name="Value">&quot;No, I&apos;d rather not.&quot;</param>
+                            <param id="1" name="Value">&quot;I&apos;d rather not.&quot;</param>
                         </action>
                         <action id="-10" name="Set value" sid="8120307593029004" type="Player">
                             <param id="0" name="Instance variable">Quote2</param>
-                            <param id="1" name="Value">&quot;Thanks, but no thanks.&quot;</param>
+                            <param id="1" name="Value">&quot;No thanks.&quot;</param>
                         </action>
                         <action id="-10" name="Set value" sid="9030158636150401" type="Player">
                             <param id="0" name="Instance variable">Quote3</param>

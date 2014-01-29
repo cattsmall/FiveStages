@@ -47,72 +47,380 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Enemy_Wall" uid="48">
+                <instance type="SadText" uid="221">
                     <properties>
+                        <text>Why?</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
+                        <font>Georgia,-96,400,0</font>
+                        <color>204,204,204</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
                     </properties>
-                    <instance-variables>
-                        <EnemyHealth>0</EnemyHealth>
-                        <EnemyStrength>0</EnemyStrength>
-                        <Can_Die>true</Can_Die>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="Flash" />
-                        <behavior-instance type="Solid">
-                            <properties>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>425</x>
-                        <y>1113</y>
+                        <x>85</x>
+                        <y>7332</y>
                         <z>0</z>
-                        <width>48</width>
-                        <height>226</height>
+                        <width>380</width>
+                        <height>206</height>
                         <depth>0</depth>
-                        <hotspotX>0.515625</hotspotX>
-                        <hotspotY>0.51171875</hotspotY>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Enemy_Wall" uid="49">
+                <instance type="SadText" uid="222">
                     <properties>
+                        <text>I&apos;m so lonely</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
+                        <font>Georgia,-96,400,0</font>
+                        <color>204,204,204</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
                     </properties>
-                    <instance-variables>
-                        <EnemyHealth>0</EnemyHealth>
-                        <EnemyStrength>0</EnemyStrength>
-                        <Can_Die>true</Can_Die>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="Flash" />
-                        <behavior-instance type="Solid">
-                            <properties>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>425</x>
-                        <y>878</y>
+                        <x>273</x>
+                        <y>6650</y>
                         <z>0</z>
-                        <width>48</width>
-                        <height>226</height>
+                        <width>816</width>
+                        <height>206</height>
                         <depth>0</depth>
-                        <hotspotX>0.515625</hotspotX>
-                        <hotspotY>0.51171875</hotspotY>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SadText" uid="223">
+                    <properties>
+                        <text>No one loves me</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-96,400,0</font>
+                        <color>204,204,204</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>125</x>
+                        <y>5802</y>
+                        <z>0</z>
+                        <width>816</width>
+                        <height>206</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SadText" uid="224">
+                    <properties>
+                        <text>Give up</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-96,400,0</font>
+                        <color>204,204,204</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>126</x>
+                        <y>5490</y>
+                        <z>0</z>
+                        <width>816</width>
+                        <height>206</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SadText" uid="225">
+                    <properties>
+                        <text>Forever alone</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-96,400,0</font>
+                        <color>204,204,204</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>121</x>
+                        <y>5109</y>
+                        <z>0</z>
+                        <width>816</width>
+                        <height>206</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SadText" uid="226">
+                    <properties>
+                        <text>Stop trying</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-96,400,0</font>
+                        <color>204,204,204</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>126</x>
+                        <y>4785</y>
+                        <z>0</z>
+                        <width>816</width>
+                        <height>206</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SadText" uid="227">
+                    <properties>
+                        <text>I&apos;m useless</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-96,400,0</font>
+                        <color>204,204,204</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>389</x>
+                        <y>4203</y>
+                        <z>0</z>
+                        <width>594</width>
+                        <height>206</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SadText" uid="228">
+                    <properties>
+                        <text>I feel numb</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-96,400,0</font>
+                        <color>204,204,204</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>100</x>
+                        <y>3925</y>
+                        <z>0</z>
+                        <width>816</width>
+                        <height>206</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SadText" uid="229">
+                    <properties>
+                        <text>I want to die</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-96,400,0</font>
+                        <color>204,204,204</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>234</x>
+                        <y>3270</y>
+                        <z>0</z>
+                        <width>816</width>
+                        <height>206</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SadText" uid="230">
+                    <properties>
+                        <text>I am worthless</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-96,400,0</font>
+                        <color>204,204,204</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>211</x>
+                        <y>2852</y>
+                        <z>0</z>
+                        <width>816</width>
+                        <height>206</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SadText" uid="231">
+                    <properties>
+                        <text>I am loveless</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-96,400,0</font>
+                        <color>204,204,204</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>247</x>
+                        <y>2330</y>
+                        <z>0</z>
+                        <width>816</width>
+                        <height>206</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SadText" uid="232">
+                    <properties>
+                        <text>I suck at life</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-96,400,0</font>
+                        <color>204,204,204</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>258</x>
+                        <y>1881</y>
+                        <z>0</z>
+                        <width>816</width>
+                        <height>206</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SadText" uid="233">
+                    <properties>
+                        <text>I&apos;m ugly</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-96,400,0</font>
+                        <color>204,204,204</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>567</x>
+                        <y>1446</y>
+                        <z>0</z>
+                        <width>816</width>
+                        <height>206</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="SadText" uid="234">
+                    <properties>
+                        <text>Sigh</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-96,400,0</font>
+                        <color>204,204,204</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>135</x>
+                        <y>1050</y>
+                        <z>0</z>
+                        <width>816</width>
+                        <height>206</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -716,7 +1024,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>417</x>
+                        <x>432</x>
                         <y>1564</y>
                         <z>0</z>
                         <width>330</width>
@@ -803,8 +1111,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>772.5</x>
-                        <y>1563</y>
+                        <x>786.5</x>
+                        <y>1564</y>
                         <z>0</z>
                         <width>379</width>
                         <height>48</height>
@@ -1642,7 +1950,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>787</x>
+                        <x>802</x>
                         <y>642</y>
                         <z>0</z>
                         <width>349</width>
@@ -1650,6 +1958,76 @@
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>-1.59375</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Enemy_Wall" uid="48">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <EnemyHealth>0</EnemyHealth>
+                        <EnemyStrength>0</EnemyStrength>
+                        <Can_Die>true</Can_Die>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>425</x>
+                        <y>1113</y>
+                        <z>0</z>
+                        <width>48</width>
+                        <height>226</height>
+                        <depth>0</depth>
+                        <hotspotX>0.515625</hotspotX>
+                        <hotspotY>0.51171875</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Enemy_Wall" uid="49">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <EnemyHealth>0</EnemyHealth>
+                        <EnemyStrength>0</EnemyStrength>
+                        <Can_Die>true</Can_Die>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                        <behavior-instance type="Solid">
+                            <properties>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>425</x>
+                        <y>878</y>
+                        <z>0</z>
+                        <width>48</width>
+                        <height>226</height>
+                        <depth>0</depth>
+                        <hotspotX>0.515625</hotspotX>
+                        <hotspotY>0.51171875</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

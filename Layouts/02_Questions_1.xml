@@ -96,9 +96,12 @@
                         <read-only>No</read-only>
                         <spell-check>No</spell-check>
                         <type>Text</type>
-                        <auto-font-size>Yes</auto-font-size>
+                        <auto-font-size>No</auto-font-size>
                         <id-optional></id-optional>
                     </properties>
+                    <instance-variables>
+                        <Is_Focused>false</Is_Focused>
+                    </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -138,10 +141,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>96</x>
+                        <x>52.5</x>
                         <y>126</y>
                         <z>0</z>
-                        <width>814</width>
+                        <width>919</width>
                         <height>133</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>

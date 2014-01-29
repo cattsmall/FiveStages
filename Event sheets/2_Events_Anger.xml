@@ -57,7 +57,7 @@
                         </action>
                         <action id="-10" name="Set value" sid="6687082251364186" type="Player">
                             <param id="0" name="Instance variable">Quote2</param>
-                            <param id="1" name="Value">&quot;Get out of my face!&quot;</param>
+                            <param id="1" name="Value">&quot;You&apos;re the worst!&quot;</param>
                         </action>
                         <action id="-10" name="Set value" sid="6755060486811691" type="Player">
                             <param id="0" name="Instance variable">Quote3</param>
@@ -146,6 +146,9 @@
                         <condition id="-6" inverted="1" name="Every X seconds" sid="2217531623258102" type="System">
                             <param id="0" name="Interval (seconds)">6</param>
                         </condition>
+                        <condition id="-6" inverted="1" name="Every X seconds" sid="4595761895325802" type="System">
+                            <param id="0" name="Interval (seconds)">15</param>
+                        </condition>
                         <condition id="-1" name="Compare X" sid="5548194576473276" type="Player">
                             <param id="0" name="Comparison">5</param>
                             <param id="1" name="X co-ordinate">EnemyBoss.X - 768</param>
@@ -182,7 +185,7 @@
                         <action id="0" name="Spawn another object" sid="7590862181923312" type="EnemyBoss">
                             <param id="0" name="Object">Enemy_Text</param>
                             <param id="1" name="Layer">0</param>
-                            <param id="2" name="Image point">2</param>
+                            <param id="2" name="Image point">1</param>
                         </action>
                         <action id="0" name="Set text" sid="1304039747727202" type="Enemy_Text">
                             <param id="0" name="Text">choose(&quot;Fuck you &quot;&amp; PlayerName &amp; &quot;!&quot;, &quot;What is wrong with you?&quot;, &quot;I can&apos;t stand you!&quot;, &quot;I&apos;m tired of your shit!&quot;)</param>
@@ -198,7 +201,7 @@
                 <event-block sid="6217065346952013">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="5933057366660626" type="System">
-                            <param id="0" name="Interval (seconds)">9</param>
+                            <param id="0" name="Interval (seconds)">15</param>
                         </condition>
                         <condition id="-1" name="Compare X" sid="2149590944697483" type="Player">
                             <param id="0" name="Comparison">5</param>
@@ -209,7 +212,7 @@
                         <action id="0" name="Spawn another object" sid="5143739212632484" type="EnemyBoss">
                             <param id="0" name="Object">Enemy_Text</param>
                             <param id="1" name="Layer">0</param>
-                            <param id="2" name="Image point">1</param>
+                            <param id="2" name="Image point">2</param>
                         </action>
                         <action id="0" name="Set text" sid="5133477680770103" type="Enemy_Text">
                             <param id="0" name="Text">choose(&quot;Fuck you &quot;&amp; PlayerName &amp; &quot;!&quot;, &quot;What is wrong with you?&quot;, &quot;I can&apos;t stand you!&quot;, &quot;I&apos;m tired of your shit!&quot;)</param>

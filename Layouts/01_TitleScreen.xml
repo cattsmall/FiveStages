@@ -80,9 +80,9 @@
                 </instance>
                 <instance type="Stage_Quote" uid="33">
                     <properties>
-                        <text>A game about acceptance</text>
+                        <text>A Cycle of Ruined Romance</text>
                         <initial-visibility>Visible</initial-visibility>
-                        <font>Georgia,-48,400,1</font>
+                        <font>Georgia,-37,400,1</font>
                         <color>102,102,102</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
@@ -105,10 +105,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>152</x>
-                        <y>235</y>
+                        <y>244</y>
                         <z>0</z>
                         <width>720</width>
-                        <height>127</height>
+                        <height>57</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -195,7 +195,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>520</x>
-                        <y>563</y>
+                        <y>509</y>
                         <z>0</z>
                         <width>252</width>
                         <height>81</height>
@@ -232,11 +232,49 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>96</x>
-                        <y>103</y>
+                        <x>105</x>
+                        <y>126</y>
                         <z>0</z>
                         <width>814</width>
                         <height>133</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Stage_Number" uid="220">
+                    <properties>
+                        <text>Asia Hoe          Catt Small          Chris Algoo</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Georgia,-24,400,0</font>
+                        <color>102,102,102</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>No</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>1</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>284</x>
+                        <y>97</y>
+                        <z>0</z>
+                        <width>456</width>
+                        <height>39</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
