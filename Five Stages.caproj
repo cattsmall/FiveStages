@@ -8,7 +8,7 @@
     <author-website>http://</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>2gg2fol44ceha</unique-id>
-    <saved-with-version>15802</saved-with-version>
+    <saved-with-version>16300</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
@@ -782,6 +782,7 @@
         <event-sheet>02_Events_Questions_1.xml</event-sheet>
         <event-sheet>03_Events_Questions_2.xml</event-sheet>
         <event-sheet>04_Events_Intermission.xml</event-sheet>
+        <event-sheet>_00_Virtual_Keyboard.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />

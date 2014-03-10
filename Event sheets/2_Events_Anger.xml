@@ -61,7 +61,7 @@
                         </action>
                         <action id="-10" name="Set value" sid="6755060486811691" type="Player">
                             <param id="0" name="Instance variable">Quote3</param>
-                            <param id="1" name="Value">&quot;Fuck you &quot; &amp; EnemyName &amp; &quot;!&quot;</param>
+                            <param id="1" name="Value">&quot;Fuck you &quot; &amp; EnemyName &amp; &quot;!!!&quot;</param>
                         </action>
                     </actions>
                 </event-block>

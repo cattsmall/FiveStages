@@ -63,6 +63,20 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="3266071409131181">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2398523710294757" type="System">
+                    <param id="0" name="Variable">PlayerName</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">&quot;&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="657621861759444" type="Stage_Title">
+                    <param id="0" name="Text">&quot;Good for you, &quot; &amp; PlayerName &amp; &quot;.&quot;</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="939303117966153">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="3740073412626999" type="System">

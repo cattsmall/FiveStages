@@ -312,10 +312,10 @@
                             <param id="1" name="Layer">0</param>
                             <param id="2" name="Image point">1</param>
                         </action>
-                        <action id="0" name="Set text" sid="5837083757201422" type="Enemy_Text">
+                        <action id="0" name="Set text" sid="8941118712780356" type="Player_Text">
                             <param id="0" name="Text">choose(Player.Quote1, Player.Quote2, Player.Quote3)</param>
                         </action>
-                        <action id="-5" name="Set width" sid="8075066226359934" type="Player_Text">
+                        <action id="-5" name="Set width" sid="8840014810100958" type="Player_Text">
                             <param id="0" name="Width">len(Player_Text.Text)*14</param>
                         </action>
                         <action behavior="Bullet" id="3" name="Set angle of motion" sid="1908458178531442" type="Player_Text">
@@ -609,10 +609,8 @@
                         <condition id="0" name="On collision with another object" sid="5014353117125781" type="Wall">
                             <param id="0" name="Object">Player_Text</param>
                         </condition>
-                        <condition id="-4" name="Is outside layout" sid="5555581584107086" type="Player_Text" />
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="9279902457710648" type="Player_Text" />
                         <action id="7" name="Play (by name)" sid="8762895630699251" type="Audio">
                             <param id="0" name="Folder">0</param>
                             <param id="1" name="Audio file name">choose(&quot;Bullet Landing 1&quot;, &quot;Bullet Landing 2&quot;, &quot;Bullet Landing 3&quot;)</param>
@@ -620,6 +618,20 @@
                             <param id="4" name="Volume">0</param>
                             <param id="2" name="Tag (optional)">&quot;&quot;</param>
                         </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="6281823149538931">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="1560439298885303" type="Enemies">
+                            <param id="0" name="Object">Player_Text</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="5154728313246169" type="Wall">
+                            <param id="0" name="Object">Player_Text</param>
+                        </condition>
+                        <condition id="-4" name="Is outside layout" sid="5734708810369696" type="Player_Text" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="41960538215813" type="Player_Text" />
                     </actions>
                 </event-block>
             </sub-events>
@@ -695,7 +707,7 @@
                     <actions>
                         <action id="-10" name="Set value" sid="2548184345070589" type="Enemy3_Friend">
                             <param id="0" name="Instance variable">EnemyHealth</param>
-                            <param id="1" name="Value">500 * DifficultyLevel</param>
+                            <param id="1" name="Value">500</param>
                         </action>
                         <action id="-10" name="Set value" sid="1449737507509387" type="Enemy3_Friend">
                             <param id="0" name="Instance variable">EnemyStrength</param>
@@ -727,7 +739,7 @@
                     <actions>
                         <action id="-10" name="Set value" sid="8177554256690525" type="Enemy_Wall">
                             <param id="0" name="Instance variable">EnemyHealth</param>
-                            <param id="1" name="Value">300 * DifficultyLevel</param>
+                            <param id="1" name="Value">300</param>
                         </action>
                     </actions>
                 </event-block>

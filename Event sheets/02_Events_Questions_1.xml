@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>02_Events_Questions_1</name>
     <events>
+        <include>_00_Virtual_Keyboard</include>
         <variable constant="0" name="PlayerName" sid="5619856171997946" static="0" type="text"></variable>
         <event-group description="" sid="1318188168090836" title="Question 1 Events">
             <sub-events>

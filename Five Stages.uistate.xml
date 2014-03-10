@@ -21,18 +21,19 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layout>02_Questions_1</layout>
         <layout>04_Intermission</layout>
         <layout>03_Questions_2</layout>
-        <event-sheet>00_Main_Controls</event-sheet>
+        <event-sheet active="1">00_Main_Controls</event-sheet>
         <event-sheet>1_Events_Denial</event-sheet>
         <event-sheet>6_Events_LoseState</event-sheet>
         <event-sheet>01_Events_TitleScreen</event-sheet>
         <event-sheet>2_Events_Anger</event-sheet>
-        <event-sheet active="1">3_Events_Bargaining</event-sheet>
+        <event-sheet>3_Events_Bargaining</event-sheet>
         <event-sheet>4_Events_Depression</event-sheet>
         <event-sheet>5_Events_Acceptance</event-sheet>
         <event-sheet>7_Events_WinState</event-sheet>
         <event-sheet>02_Events_Questions_1</event-sheet>
         <event-sheet>03_Events_Questions_2</event-sheet>
         <event-sheet>04_Events_Intermission</event-sheet>
+        <event-sheet>_00_Virtual_Keyboard</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
