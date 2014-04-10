@@ -33,7 +33,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <event-sheet>02_Events_Questions_1</event-sheet>
         <event-sheet>03_Events_Questions_2</event-sheet>
         <event-sheet>04_Events_Intermission</event-sheet>
-        <event-sheet>_00_Virtual_Keyboard</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />

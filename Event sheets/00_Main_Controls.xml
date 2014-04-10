@@ -116,10 +116,13 @@
         </event-group>
         <event-group description="" sid="5052450420016781" title="Keyboard Events">
             <sub-events>
-                <event-block sid="9740245556442475">
+                <event-block any="1" sid="9740245556442475">
                     <conditions>
                         <condition id="2" name="Key is down" sid="9289154135391667" type="Keyboard">
                             <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="3199993683311493" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -128,15 +131,42 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="6725354864491599">
+                <event-block any="1" sid="6725354864491599">
                     <conditions>
                         <condition id="2" name="Key is down" sid="381718254991583" type="Keyboard">
                             <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="8731970245637815" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="7" name="Set mirrored" sid="5715105484285831" type="Player">
                             <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="8226647711352023">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="2219232108771581" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="1300309159326854" type="Player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="8117772682915022">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="7083327860250555" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="3163924276664541" type="Player">
+                            <param id="0" name="Control">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -170,6 +200,21 @@
                     </actions>
                 </event-block>
                 <comment>Regular Jump</comment>
+                <event-block any="1" sid="2095496873771051">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="6438112345860212" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="734638076651564" type="Keyboard">
+                            <param id="0" name="Key">16 (Shift)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="7740365058329212" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="2046927378593324">
                     <conditions>
                         <condition behavior="Platform" id="3" name="Is jumping" sid="7849913112168651" type="Player" />
@@ -214,36 +259,49 @@
                     </actions>
                 </event-block>
                 <comment>Double Jump</comment>
-                <event-block sid="7563296665761614">
+                <event-block any="1" sid="7563296665761614">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="5414589871727186" type="Keyboard">
                             <param id="0" name="Key">38 (Up arrow)</param>
                         </condition>
-                        <condition behavior="Platform" id="3" name="Is jumping" sid="702712360194817" type="Player" />
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="6119660326002481" type="Player">
-                            <param id="0" name="Instance variable">Double_Jump</param>
+                        <condition id="0" name="On key pressed" sid="1832857330936273" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="4328730124094625" type="Keyboard">
+                            <param id="0" name="Key">16 (Shift)</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="7" name="Play (by name)" sid="62988414940825" type="Audio">
-                            <param id="0" name="Folder">0</param>
-                            <param id="1" name="Audio file name">choose(&quot;Double Jump 1&quot;, &quot;Double Jump 2&quot;, &quot;Double Jump 3&quot;)</param>
-                            <param id="3" name="Loop">0</param>
-                            <param id="4" name="Volume">0</param>
-                            <param id="2" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                        <action behavior="Platform" id="9" name="Set vector Y" sid="9187986346014981" type="Player">
-                            <param id="0" name="Vector Y">-(Player.Platform.JumpStrength)</param>
-                        </action>
-                        <action id="-13" name="Set boolean" sid="521701931428435" type="Player">
-                            <param id="0" name="Instance variable">Double_Jump</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="4" name="Set animation" sid="5413060961379847" type="Player">
-                            <param id="0" name="Animation">&quot;Jump&quot;</param>
-                            <param id="1" name="From">1</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="8634485344512351">
+                            <conditions>
+                                <condition behavior="Platform" id="3" name="Is jumping" sid="1513903680599884" type="Player" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="3247322567267883" type="Player">
+                                    <param id="0" name="Instance variable">Double_Jump</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Play (by name)" sid="108545611781274" type="Audio">
+                                    <param id="0" name="Folder">0</param>
+                                    <param id="1" name="Audio file name">choose(&quot;Double Jump 1&quot;, &quot;Double Jump 2&quot;, &quot;Double Jump 3&quot;)</param>
+                                    <param id="3" name="Loop">0</param>
+                                    <param id="4" name="Volume">0</param>
+                                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="7609018930470084" type="Player">
+                                    <param id="0" name="Vector Y">-(Player.Platform.JumpStrength)</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="7722975783214808" type="Player">
+                                    <param id="0" name="Instance variable">Double_Jump</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="1471530019409752" type="Player">
+                                    <param id="0" name="Animation">&quot;Jump&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="5292953724047924">
                     <conditions>
@@ -257,10 +315,13 @@
                     </actions>
                 </event-block>
                 <comment>Fall through platform</comment>
-                <event-block sid="1846592419251515">
+                <event-block any="1" sid="1846592419251515">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="8247308392164375" type="Keyboard">
                             <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="7103043820209764" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
                         </condition>
                     </conditions>
                     <actions>

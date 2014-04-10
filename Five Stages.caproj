@@ -782,7 +782,6 @@
         <event-sheet>02_Events_Questions_1.xml</event-sheet>
         <event-sheet>03_Events_Questions_2.xml</event-sheet>
         <event-sheet>04_Events_Intermission.xml</event-sheet>
-        <event-sheet>_00_Virtual_Keyboard.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />
